@@ -1,0 +1,488 @@
+<html>
+<head>
+<title>John Turner | Computer Vision | Recognition with Bag of Words</title>
+<link href='http://fonts.googleapis.com/css?family=Nunito:300|Crimson+Text|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" title="Default" href="styles/github.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>  
+
+<link rel="stylesheet" href="../highlighting/styles/default.css">
+<script src="../highlighting/highlight.pack.js"></script>
+<style>
+#comvisP4Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+
+}
+#comvisP4Tbl img{
+        width:100%; height:auto;
+}
+</style>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Scene Recognition with Bag of Words</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+      	<li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">      
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>          
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li class="active"><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+         <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+            <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>
+            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+            <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/comvis/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioCharAnim.html">Computer Vision</a></li>
+        <li><a href="#">Scene Recognition with Bag of Words</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Scene Recognition with Bag of Words</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6476 Computer Vision</td>
+              <td>James Hays</td>
+              <td>Fall 2015</td>
+              <td>MATLAB</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+		
+		<div style="float: right; padding: 20px">
+		<img src="../../cvimages/comvis/comvisProj4/images/bestPerfTinyImageKnn.png" />
+		<p style="font-size: 14px">Best Performing Tiny Image confusion matrix</p>
+		</div>
+		
+		<p>The purpose of this project was to implement various image parameterization and classification techniques to assist in the task of scene recognition.  
+		From 15 categories of images we build training and testing sets of images to build and validate, respectively, the various classifiers we are implementing. </p>
+		<ol>
+		<li>Tiny Image representation + K-NN Classification</li>
+		<li>Bag of SIFT Words + K-NN Classification</li>
+		<li>Bag of SIFT Words + Linear SVM Classification</li>
+		<li>Bag of SIFT Words + Non-Linear SVM Classification</li>
+		<li>Bag of PHOW Words + K-NN/Linear/Non-Linear SVM Classification</li>
+		</ol>
+		<h3>Tiny Image representation + K-NN Classification</h3>
+		<p> In an ideal world, we would train and validate our classifiers on entire images, but this would be intractible to teach any kind of thorough image recognition, due to the sheer
+		size of the data required.  To counter this, image representation mechanisms are implemented to represent the important contextual elements of an image in a reduced space
+		to make classification tasks tractible. </p>
+		<p>One of the simplest of such mechanisms is the tiny image reperesentation.  Basically, the image is shrunk to a size that is sufficiently small that it can be used itself as a feature descriptor of
+		the original image.  It is quickly apparent that this is not a desireable solution, as all the detail and high-frequency content in the image is lost - in effect, the process of shrinking 
+		the image is equivalent to blurring it.</p>
+		<p>Equally as straight-forward is the concept behind the first classifier that I implemented - K-NN.  
+		Basically it says that the a sample is going to probably be classified similarly to its neighbors in feature space (those samples whose features it generally "looks like"). For this calculation I implemented
+		both a hard threshold and a weighted voting mechanism, where the first K neighbors had an influence on the predicted classification of a particular sample that was inversely proportional to their distance.  This was 
+		intended to minimaize the impact of outliers, who may be very close to a sample but whose classes are sparsely represented in the neighborhood.  
+		This resulted in a few percentage points better performance, on average, everywhere I used K-NN.</p>
+		<p>For the Tiny Image portion of the project, I shrank the images to be 16x16 pixels.  I alternated between shrinking only the center square of the image and shrinking the entire image, and using the central square improved 
+		the performance by a few %, with the tiny images also being normalized. Compared to random guessing, which would be expected to be correct around 6-7% of the time (1:15), 
+		the tiny images did pretty well at ~22-23%, but for a real recognition task this performance is severely lacking.</p>
+		<pre><code>%The best performance for the tiny image representation using K-NN classifier was :
+		Avg accuracy : 0.233667 across 10.000000 runs with std 0.005915
+		Best accuracy : 0.246 with K = 6;
+		using varying K's : [14, 5, 1, 1, 17, 7, 1, 1, 6, 1] 
+		</code></pre>
+		<h3>Bag of SIFT Words + K-NN Classification</h3>
+		<p> 
+		Instead of Tiny Images, I next used a Bag of Words implementation derived from SIFT descriptors of the training images.  To accomplish this, I used vl_dsift to aquire the various sift 
+		descriptors from each image, then I compiled a descriptor "Language" by assigning each descriptor to a cluster using vlfeat's nearest neighbor algorithm, and saving the centroid of 
+		this cluster as a feature.  I varied vocabulary (# of clusters) from 10 to 800 and step size from 100 to 8, but ended up using a vocabulary size of 
+		400, a step size of 8 and a sample size of 4 as my primary BOW sources.
+		  I varied vlfeat's Nearest Neighbor algorithm between the default lloyd and elkan and ANN, and found that ANN performed as well as elkan and lloyd (on average) and was a bit faster.  
+		  In general the clustering of the vocabulary for the Bag Of Words generation took the longest of all the components for this project to complete, but this was alleviated somewhat by 
+		  saving files with names relevant to the hyperparams used to generate them.</p>
+		  <p> I then build normalized histograms of each image in the test and training data set, counting the presence of each of the words in the sift feature complement for each image.  The performance of this
+		  method was over twice as good as the best Tiny Image performance, which stands to reason in that the details of the images are not lost as they are with blurring/shrinking, but rather encoded, albeit without
+		  and sense of their location within the image.</p> 
+		<pre><code>%The best performance for the Bag of SIFT words representation using K-NN classifier was :
+		Without neighbor voting : Avg accuracy : 0.534133 across 10.000000 runs with std 0.010134 
+		Best accuracy with K val : 15.000000 gives accuracy : 0.543333 
+		With Neighbor Voting : Avg accuracy : 0.551400 across 10.000000 runs with std 0.012914 
+		Best K val : 5.000000 gives accuracy : 0.579333
+		</code></pre>
+		<h3>Bag of SIFT Words + Linear SVM Classification</h3>
+		<p> 
+		I then replaced the K-NN classifier with a linear SVM classifier, which attempts to partition the feature space into "membership/non-membership" zones using a n-dimensional hyperplane, where n is the dimension of feature space.  
+		To implement this I used vlfeat's vl_svmtrain function.  I found that a lambda of 0.000240 worked best with my bag of sift words representation, 
+		and this classifier added over 10% to the performance of this configuration.
+		</p>
+		<pre><code>%The best performance for the Bag of SIFT words representation using Linear SVM classifier was :
+		Avg accuracy : 0.662267 across 10.000000 runs with std 0.004436 
+		Best Accuracy (mean of diagonal of confusion matrix) is 0.684
+		</code></pre>
+		<h3>Bag of SIFT Words + Non-Linear SVM Classification</h3>
+		<p>In an effort to match a more complex feature space topology, I used the Non-linear SVM classifier coded via primal_svm.m, 
+		from the website <a href="http://olivier.chapelle.cc/primal/">Olivier Chapelle's Primal_svm.m</a>.  The implementation
+		of this was similar to using the vl_svmtrain function, but instead of using just the labels and training examples, a distance kernel was built from the 
+		training examples, consisting of a gaussian RBF of the training examples, and another gaussian distance kernel of the testing examples was built for evaluation.  
+		I used a lambda of .000001 and a gamma of .5 for the gaussian RBF, and I implemented my own kernel function. </p>
+		<pre><code>%The best performance for the Bag of SIFT words representation using Non-Linear SVM classifier was :
+		Avg accuracy : 0.690400 across 10.000000 runs with std 0.008857 
+		Best Accuracy (mean of diagonal of confusion matrix) is 0.714
+		</code></pre>
+		<h3>Bag of PHOW Words + KNN/Linear/Non-Linear SVM Classification</h3>
+		<p>In an attempt to improve the recognition performance, I tried using Pyramid Histogram of SIFT Words descriptors, which are basically SIFT descriptors taken at multiple scales.  These descriptors were slower to compute (I used the same hyperparams as those for the regular SIFT Bag of Words descriptors)
+		but also performed a little better than the pure SIFT Bag of words.  I used the built in vlFeat function vl_phow, with a step size of 8 and the default sample size ramp.</p>
+		<pre><code>%The best performance for the Bag of PHOW words representation using K-NN classifier was :
+		Without neighbor voting : Avg accuracy : 0.544200 across 10.000000 runs with std 0.008345 
+		Best K val : 5.000000 gives accuracy : 0.550000
+		With Neighbor Voting : Avg accuracy : 0.564333 across 10.000000 runs with std 0.015226 with neighbor voting
+		Best K val : 7.000000 gives accuracy : 0.584667
+		</code></pre>
+		<p>For the Linear SVM classifier I used a lambda regularization coefficient of 0.00016.</p>
+		<pre><code>%The best performance for the Bag of PHOW words representation using Linear SVM classifier was :
+		Avg accuracy : 0.671200 across 10.000000 runs with std 0.011387
+		Best Accuracy (mean of diagonal of confusion matrix) is 0.691
+		</code></pre>
+		<p>For the Non-linear SVM classifier, I wasn't able to get the PHOW representation to perform as well as the standard Bag of SIFT words, but this was probably due to the necessity of more parameter tuning.
+		<pre><code>%The best performance for the Bag of PHOW words representation using Non-Linear SVM classifier was :
+		Avg accuracy : 0.664000 across 10.000000 runs with std 0.011496 
+		Best Accuracy (mean of diagonal of confusion matrix) is 0.681
+		</code></pre>
+		
+		<h3>Extra Implementations</h3>
+		<p>To sum of my extra implementations, I implemented n-fold cross validation (where I would resample from both the training and testing sets 
+		and build new sets, to build new models, and see their performance), multiple Kmeans functionality for clustering the bags of words, distance-based voting for KNN,
+		multiple vocabulary-size result sets. PHOW Bags, nonlinear svm, and my own kernel function.</p>
+		<center>
+		Results best performing pipeline in my project - Nonlinear SVM on Bag of Sift Features : 71.4 %
+		<p>
+		<img src="../../cvimages/comvis/comvisProj4/confusion_matrix.png">
+		<br>
+		Accuracy (mean of diagonal of confusion matrix) is 0.714
+		<p>
+		<table id="comvisP4Tbl">
+		<tr>
+		<th>Category name</th>
+		<th>Accuracy</th>
+		<th colspan=2>Sample training images</th>
+		<th colspan=2>Sample true positives</th>
+		<th colspan=2>False positives with true label</th>
+		<th colspan=2>False negatives with wrong predicted label</th>
+		</tr>
+		<tr>
+		<td>Kitchen</td>
+		<td>0.590</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Kitchen_image_0004.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Kitchen_image_0007.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Kitchen_image_0170.jpg"></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Kitchen_image_0160.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0022.jpg" ><br><small>LivingRoom</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0003.jpg" ><br><small>LivingRoom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Kitchen_image_0110.jpg" ><br><small>LivingRoom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Kitchen_image_0044.jpg" ><br><small>Bedroom</small></td>
+		</tr>
+		<tr>
+		<td>Store</td>
+		<td>0.590</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0005.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0188.jpg" width=102 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0030.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0083.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0021.jpg" ><br><small>InsideCity</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0095.jpg" ><br><small>LivingRoom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0056.jpg" ><br><small>Industrial</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0003.jpg" ><br><small>Coast</small></td>
+		</tr>
+		<tr>
+		<td>Bedroom</td>
+		<td>0.390</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0143.jpg" width=101 height=75></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0199.jpg" width=107 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0018.jpg" width=101 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0153.jpg" width=114 height=75></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0040.jpg" width=135 height=75><br><small>Industrial</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0007.jpg" width=109 height=75><br><small>LivingRoom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0090.jpg" width=108 height=75><br><small>Office</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0020.jpg" width=101 height=75><br><small>OpenCountry</small></td>
+		</tr>
+		<tr>
+		<td>LivingRoom</td>
+		<td>0.440</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0130.jpg" width=101 height=75></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0149.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0135.jpg" width=116 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0077.jpg" width=113 height=75></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Office_image_0112.jpg" width=123 height=75><br><small>Office</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0033.jpg" width=101 height=75><br><small>Bedroom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0003.jpg" width=114 height=75><br><small>Kitchen</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0107.jpg" width=129 height=75><br><small>Bedroom</small></td>
+		</tr>
+		<tr>
+		<td>Office</td>
+		<td>0.870</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Office_image_0170.jpg" width=115 height=75></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Office_image_0197.jpg" width=119 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Office_image_0065.jpg" width=103 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Office_image_0158.jpg" width=121 height=75></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Kitchen_image_0049.jpg" width=113 height=75><br><small>Kitchen</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0052.jpg" width=103 height=75><br><small>Bedroom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Office_image_0060.jpg" width=98 height=75><br><small>LivingRoom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Office_image_0009.jpg" width=120 height=75><br><small>Kitchen</small></td>
+		</tr>
+		<tr>
+		<td>Industrial</td>
+		<td>0.520</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0280.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0131.jpg" width=53 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0113.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0126.jpg" width=134 height=75></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0032.jpg" ><br><small>LivingRoom</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0128.jpg" width=115 height=75><br><small>Bedroom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0100.jpg" width=118 height=75><br><small>Coast</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0056.jpg" width=115 height=75><br><small>TallBuilding</small></td>
+		</tr>
+		<tr>
+		<td>Suburb</td>
+		<td>0.950</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Suburb_image_0049.jpg" width=113 height=75></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Suburb_image_0054.jpg" width=113 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Suburb_image_0119.jpg" width=113 height=75></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Suburb_image_0028.jpg" width=113 height=75></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0115.jpg" width=94 height=75><br><small>Industrial</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0041.jpg" ><br><small>Mountain</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Suburb_image_0023.jpg" width=113 height=75><br><small>Office</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Suburb_image_0137.jpg" width=113 height=75><br><small>Office</small></td>
+		</tr>
+		<tr>
+		<td>InsideCity</td>
+		<td>0.680</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0255.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0159.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0133.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0091.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0121.jpg" width=118 height=75><br><small>Industrial</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/LivingRoom_image_0088.jpg" ><br><small>LivingRoom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0140.jpg" ><br><small>Street</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0038.jpg" ><br><small>TallBuilding</small></td>
+		</tr>
+		<tr>
+		<td>TallBuilding</td>
+		<td>0.740</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/TallBuilding_image_0063.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/TallBuilding_image_0118.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/TallBuilding_image_0092.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/TallBuilding_image_0031.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0137.jpg" width=120 height=75><br><small>Industrial</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0038.jpg" ><br><small>InsideCity</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/TallBuilding_image_0081.jpg" ><br><small>Mountain</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/TallBuilding_image_0070.jpg" ><br><small>Forest</small></td>
+		</tr>
+		<tr>
+		<td>Street</td>
+		<td>0.880</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Street_image_0242.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Street_image_0152.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Street_image_0121.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Street_image_0091.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0107.jpg" ><br><small>InsideCity</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Highway_image_0070.jpg" ><br><small>Highway</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Street_image_0049.jpg" ><br><small>TallBuilding</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Street_image_0046.jpg" ><br><small>InsideCity</small></td>
+		</tr>
+		<tr>
+		<td>Highway</td>
+		<td>0.820</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Highway_image_0238.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Highway_image_0204.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Highway_image_0011.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Highway_image_0041.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/InsideCity_image_0006.jpg" ><br><small>InsideCity</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Bedroom_image_0113.jpg" ><br><small>Bedroom</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Highway_image_0100.jpg" ><br><small>Mountain</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Highway_image_0146.jpg" ><br><small>Store</small></td>
+		</tr>
+		<tr>
+		<td>OpenCountry</td>
+		<td>0.600</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0364.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0094.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0011.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0047.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0110.jpg" ><br><small>Mountain</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Coast_image_0067.jpg" ><br><small>Coast</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0037.jpg" ><br><small>Suburb</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0106.jpg" ><br><small>Forest</small></td>
+		</tr>
+		<tr>
+		<td>Coast</td>
+		<td>0.760</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Coast_image_0294.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Coast_image_0100.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Coast_image_0062.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Coast_image_0039.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0054.jpg" ><br><small>Industrial</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0034.jpg" ><br><small>OpenCountry</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Coast_image_0001.jpg" ><br><small>OpenCountry</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Coast_image_0067.jpg" ><br><small>OpenCountry</small></td>
+		</tr>
+		<tr>
+		<td>Mountain</td>
+		<td>0.840</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0151.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0199.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0045.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0094.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Industrial_image_0021.jpg" ><br><small>Industrial</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0012.jpg" ><br><small>Store</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0016.jpg" ><br><small>Highway</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Mountain_image_0031.jpg" ><br><small>Forest</small></td>
+		</tr>
+		<tr>
+		<td>Forest</td>
+		<td>0.940</td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Forest_image_0254.jpg" ></td>
+		<td bgcolor=LightBlue><img src="../../cvimages/comvis/comvisProj4/thumbnails/Forest_image_0090.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Forest_image_0133.jpg" ></td>
+		<td bgcolor=LightGreen><img src="../../cvimages/comvis/comvisProj4/thumbnails/Forest_image_0106.jpg" ></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/OpenCountry_image_0084.jpg" ><br><small>OpenCountry</small></td>
+		<td bgcolor=LightCoral><img src="../../cvimages/comvis/comvisProj4/thumbnails/Store_image_0068.jpg" ><br><small>Store</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Forest_image_0025.jpg" ><br><small>Mountain</small></td>
+		<td bgcolor=#FFBB55><img src="../../cvimages/comvis/comvisProj4/thumbnails/Forest_image_0056.jpg" ><br><small>OpenCountry</small></td>
+		</tr>
+		<tr>
+		<th>Category name</th>
+		<th>Accuracy</th>
+		<th colspan=2>Sample training images</th>
+		<th colspan=2>Sample true positives</th>
+		<th colspan=2>False positives with true label</th>
+		<th colspan=2>False negatives with wrong predicted label</th>
+		</tr>
+		</table>
+		</center>
+
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

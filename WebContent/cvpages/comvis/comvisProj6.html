@@ -1,0 +1,330 @@
+<html>
+<head>
+<title>John Turner | Computer Vision | Convolution NN for Object Recognition</title>
+<link href='http://fonts.googleapis.com/css?family=Nunito:300|Crimson+Text|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" title="Default" href="styles/github.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>  
+
+<link rel="stylesheet" href="../highlighting/styles/default.css">
+<script src="../highlighting/highlight.pack.js"></script>
+<style>
+#comvisP6Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+
+}
+#comvisP6Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Convolution NN for Object Recognition</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+      	<li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">      
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>          
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li class="active"><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Object Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+        <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+             <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>
+            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+             <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/comvis/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioCharAnim.html">Computer Vision</a></li>
+        <li><a href="#">Convolution NN for Object Recognition</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Convolution NN for Object Recognition</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6476 Computer Vision</td>
+              <td>James Hays</td>
+              <td>Fall 2015</td>
+              <td>MATLAB</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+<div style="float: right; padding: 20px">
+<img src="../../cvimages/comvis/comvisProj6/images/part1Filters.png" />
+<p style="font-size: 14px">Visualization of weights into the first layer of Part 1 Net : They look like filters or edge detectors</p>
+</div>
+
+<p> The purpose of this project was to illustrate the benefits of using deep learning (specifically, a Convolutional Neural 
+Net) for object recognition, 
+in two parts, either building a net from scratch or modifying the fully-connected layers of a pre-trained net and using it 
+as a "warm start" (retraining it on our training data).</p>
+<h3>Overview of CNNs</h3>
+<p>In a standard neural net, the inputs to the net, often called the feature vector, are composed of descriptive attributes 
+of the data being classified.  Often, each of these attribute values
+is connected to each of a number of "perceptrons" which make up the first layer of the network, and which in turn are each 
+connected to each of the set of perceptrons in the next layer (if there are any) or the output
+vector.  The connections between these various components are weights that are applied to each input or previous layer's 
+output, while each of the perceptrons (or percepts) act as summing thresholds, where once the weighted sum of all its inputs 
+surpasses some value, it "activates" and passes a signal along to the next layer or the output.</p>
+<p>The training data is fed into the network, and the resultant output is evaluated against the known classification of the 
+data to generate "error" or "loss".  Then we differentiate this error with respect to the weights of every connection to see 
+where changes in the weights 
+will decrease the error (Back propagation).  By iteratively repeating these forward passes to generate data and back 
+propagation to update the weights, we "train" the network on a set of data, until the error we get in a forward pass 
+is sufficiently low for our purposes.</p>
+<p>One problem with this process, inherent in neural nets of a fully connected configuration, is that they don't scale 
+well in the size of the input - given a net with the first layer 
+having n perceptions, adding a single feature adds n more weights that require updating, a quadratic cost.  With an 
+input of very high dimensions, a fully connected neural network like I have described 
+would take exceedingly long to train.  A network configured to use an image as an input, where every pixel or even region of 
+pixels, was quantized in some manner and fed as a feature into the net, therefore, would obviously be intractible unless the image was very small.</p>
+ <p>Enter Convolutional Neural Networks.  Instead of having each piece of the input image feed every perceptron with its own weight, we apply the same weights to an image uniformly across 
+ every input pixel (similarly to the various filtering techniques we employed in earlier projects), and instead add layers, with different sets of weights for each, to provide variation in our input processing. Each layer of perceptrons within this first 
+ "convolutional layer" is fed by every pixel of the image along with the neighborhood around the pixel using the same weights as every
+ other perceptron in the same layer. Now, with this configuration, adding a pixel to the image input (i.e. increasing the feature vector size by 1) doesn't add n weights (where n is the # of perceptrons in the first layer) but rather just increases the sizes 
+ of each of this set of input layers by 1. Another benefit of this configuration is that it takes advantage of the fact that whatever makes a characteristic important in 
+ an image is the same all over the image (stationarity).  By applying the same "filter" (weights) to the entire image, the layer that set of weights is connected to is getting a coherent representation of the image, or the previous layer of data (for convolutional layers later in the net configuration.)</p>
+<h3>Part 1</h3>
+<p>To perform the first part of the project, I took the given net, which performed poorly, and consisted of a single convolutional layer, followed by a pooling layer (where the specified sized
+neighborhood of outputs from the previous layer are compared, the max is found and the neighborhood is then replaced by a single max value (like a funnel)) of large stride and a rectified linear layer (used to get rid of negative outputs from the previous
+layers), and added the following : 
+<ol>
+<li>Image Jitter (where ~50% of the images were replace by their Left->Right mirror versions) </li>
+<li>Image Zero-Centering (where the "average image" is subtracted from each image, so that the image data is centered at 0)</li>
+<li>Network Regularization (where parts of the network are "turned off" during training in an effort to fight overfitting - in effect making our training data set look bigger to the network by only exposing part of the network to the data at a time)</li>
+<li>Additional Convolution Layers (2)</li>
+<li>Increased the # of filters in initial layer from 10 to 16. </li>
+</ol>
+<p>The net I used for part 1 was as follows (the layers I added were the 7x7 convolution layer, 2x2x2 max pool, 5x5 conv, 2x2x2 max pool, and the 50% dropout on the last stage before the fully connected layer) : </p>
+<pre><code>%Part 1 CNN
+numFilters = 16;
+net.layers = {} ;
+
+net.layers{end+1} = struct('type', 'conv', ...
+                           'weights', {{f*randn(9,9,1,numFilters, 'single'), zeros(1, numFilters, 'single')}}, ...
+                           'stride', 1, 'pad', 0, 'name', 'conv1') ;
+                       
+net.layers{end+1} = struct('type', 'pool', 'method', 'max', 'pool', [3 3], 'stride', 2, 'pad', 0) ;
+net.layers{end+1} = struct('type', 'relu') ;
+
+%additional set of layers
+%dropout layer here
+net.layers{end+1} = struct('type', 'conv', 'weights', {{f*randn(7,7,numFilters,numFilters, 'single'), zeros(1, numFilters, 'single')}}, ...
+                           'stride', 1, 'pad', 0, 'name', 'conv1') ;
+net.layers{end+1} = struct('type', 'pool', 'method', 'max', 'pool', [2 2], 'stride', 2, 'pad', 0) ;
+net.layers{end+1} = struct('type', 'relu') ;
+
+net.layers{end+1} = struct('type', 'conv', 'weights', {{f*randn(5,5,numFilters,numFilters, 'single'), zeros(1, numFilters, 'single')}}, ...
+                           'stride', 1, 'pad', 0, 'name', 'conv1') ;
+net.layers{end+1} = struct('type', 'pool', 'method', 'max', 'pool', [2 2], 'stride', 2, 'pad', 0) ;
+net.layers{end+1} = struct('type', 'relu') ;                       
+
+%dropout layer here
+net.layers{end+1} = struct('type', 'dropout', 'rate',0.5) ;
+net.layers{end+1} = struct('type', 'conv', 'weights', {{f*randn(3,3, numFilters,15, 'single'), zeros(1, 15, 'single')}}, ...
+                           'stride', 1, 'pad', 0, 'name', 'fc1') ;                      
+% Loss layer
+net.layers{end+1} = struct('type', 'softmaxloss') ;
+</code></pre>
+<div style="float: left; padding: 20px">
+<img src="../../cvimages/comvis/comvisProj6/images/Part1Results.png" />
+<p style="font-size: 14px">Results after 500 epochs with all optimizations in place.</p>
+</div>
+<p>On the last point, while increasing the number of "filters" to 16 increased the size of the net, and the complexity/training time, it still trained very quickly using the 
+GPU implementation of the MatConvNet library - in fact, I didn't really notice that much of a difference in training/evaluation time.  
+I hoped that with more filters greater detail would be exposed in training, but I found that this didn't seem to be the case - the visualizations of the set of 16 weight-sets/filters did not seem to have much more variability than having 10.  
+The improvement in accuracy using this increased count of filters was only about 5%</p>
+<p>I used a logarithmic mapping of the learning rate, so that early in the process the rate was larger, whereas later in the training process it was smaller, in an effort to avoid getting stuck in local minima early in the process, similar to 
+the concept behind simulated annealing.  I also took advantage of my GPU by compiling the MatConvNet code to support GPU computing. </p>
+
+<p> The results I got for augmenting each of the necessary components of the network are as follows : </p>
+<h3>Results For Part 1</h3>
+<table id="compvisP6Tbl">
+<tr><td>Network Configuration</td><td><span class="boldTxt">Performance (% error)</span></td></tr>
+<tr><td>Base Network </td><td><span class="boldTxt">78%</span></td></tr>
+<tr><td>Jittered Images 50% </td><td><span class="boldTxt">68.2%</span></td></tr>
+<tr><td>Jitter + Zero Centering </td><td><span class="boldTxt">45.5%</span></td></tr>
+<tr><td>Jitter + ZC + Dropout Regularization of 50% </td><td><span class="boldTxt">35.1%</span></td></tr>
+<tr><td>Jitter + ZC + D.R. + Extra Layers </td><td><span class="boldTxt">43.1%</span></td></tr>
+</table>
+<div style="clear : right">
+
+<h3>Graduate Credit : Part 2</h3>
+<p>For Part 2, I took the previously trained VGG-F network, modified the output layers to appropriate match the 15 classes 
+we have in our data (instead of the 1000 classes it was originally trained for) and added two dropout layers before each of the last two fully connected layers. The images were loaded into 
+the program in the same manner as part 1, although they were larger and copied for all 3 channels (since the VGG-F net was trained on 3-channel images), and the jitter process I used was the same.  Upon retraining the network on 
+our data I was able to get an error rate of 10.2% after 10 epochs. Using the GPU compilation of the MatConvNet library I was able to train and test this network to a satisfactory level of accuracy in 
+only about 2 minutes.  It was pretty amazing that so little modifications were necessary to make a net trained on an entirely different set of data capable of quickly converging on our data set.  
+The important, identifying features of images, at least for this task of image classification, seem have a great deal of commonality, for this to be possible.  The first layer filters didn't 
+even change that much from back prop, at least that I could distinguish, 
+despite that our images were black and white and not color like those images the network was originally trained on.  </p>
+<pre><code>%Part 2 Modifications to VGG-F
+f=1/100; 
+%hold onto net layer fc7
+netLyrFC7 = net.layers{end-3};
+netLyrRelu7 = net.layers{end-2};
+%dropout7
+net.layers{end-3} = struct('type', 'dropout', 'rate',0.5) ;
+net.layers{end-2} = netLyrFC7;
+net.layers{end-1} = netLyrRelu7;
+
+%dropout8
+net.layers{end} = struct('type', 'dropout', 'rate',0.5) ;
+%fc8
+net.layers{end+1} = struct('type', 'conv', ...
+                           'weights', {{f*randn(1,1, 4096,15, 'single'), zeros(1, 15, 'single')}}, ...
+                           'stride', 1, ...
+                           'pad', 0, ...
+                           'name', 'fc8') ;
+                      
+% Loss layer
+net.layers{end+1} = struct('type', 'softmaxloss') ;
+</code></pre>
+</div>
+	<h3>Results of Part 2 - Pretrained CNN retrained on new images</h3>
+	<table id="comvisP6Tbl" >
+	<tr><td>Part 2 Filters after training - don't look too different from the original filters.</td>
+	<td>After only a few epochs, and yet still only 10.2% error.</td>
+	<td>Results after long training.</td>
+	</tr>
+	<tr>
+	<td><img src="../../cvimages/comvis/comvisProj6/images/part2Filters.png"  /></td>
+	<td><img src="../../cvimages/comvis/comvisProj6/images/Part2Results.png"  /></td>
+	<td><img src="../../cvimages/comvis/comvisProj6/images/Part2Results2.png"  /></td>
+	</tr>
+		
+		</table>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

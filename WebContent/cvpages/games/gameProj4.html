@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Computer Music | Sequencer and Music Visualizer using JCuda FFT Ocean</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 960, 
+			height: 600,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "DemoManWeb.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	body {
+		font-family: Helvetica, Verdana, Arial, sans-serif;
+		background-color: white;
+		color: black;
+		text-align: center;
+	}
+	a:link, a:visited {
+		color: #000;
+	}
+	a:active, a:hover {
+		color: #666;
+	}
+	p.header {
+		font-size: small;
+	}
+	p.header span {
+		font-weight: bold;
+	}
+	p.footer {
+		font-size: x-small;
+	}
+	div.content {
+		margin: auto;
+		width: 960px;
+	}
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 600px;
+		width: 960px;
+	}
+	-->
+	</style>
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Demo Man</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">      
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>          
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+        <li class="active"><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+             <li class = "active"><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+            <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+             <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div><div class="wrapper row2 bgded" style="background-image:url('../../cvimages/games/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioGames.html">Games Portfolio</a></li>
+        <li><a href="#">Sequencer and Music Visualizer using JCuda FFT Ocean</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+<main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Sequencer and Music Visualizer using JCuda FFT Ocean</h1>
+
+	<div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 8803 Computational Aesthetics</td>
+              <td>Jarek Rossignac</td>              
+              <td>Fall 2015</td>
+              <td>Java/JCuda</td>
+              <td>No</td>
+              <td><a href="https://github.com/jturner65/SequencerWithJCudaOcean">Github Repo</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This project was the final project for the Computational Aesthetics class I took with Jarek Rossignac in Fall 2015.  I'd wanted to code up a sequencer since I first
+      started using Cakewalk synched to ADAT's via MMC commands in 1996.  There were a few objectives with this project that I wanted to meet, 
+      beyond the scope of the original assignment (which was two-fold - 1) to implement a sequencer/multi-track synthesizer using spherical UI "devices" to compose the music 
+      (as opposed to linear mechanisms like conductor score or piano roll) accenting the cyclic nature of the intended result and 2) to visualize the resultant music via some 
+      frequency-domain-dervied graphical process).</p>
+      <p>I also implemented a staff/conductor score mechanism for input/playback that responded to trajectory inputs (which in turn could be edited) and facilitated such functionality as 
+      user-configurable key signature and time signature.  For visualization I coded up a JCuda version of NVidia's CUDA FFT Ocean demo, and mixed the music being played into the frequency
+      space of the generated noise. (<a href = "http://graphics.ucsd.edu/courses/rendering/2005/jdewall/tessendorf.pdf">The origin of this FFT-based simulation process can be found here</a>) </p>
+      <p>(Vids of project on the way...)</p>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

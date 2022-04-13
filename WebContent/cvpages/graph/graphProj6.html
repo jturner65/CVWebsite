@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Graphics | Generate Polygon and Parse in 4 equal areas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+#graphP6Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+
+}
+#graphP6Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Generate Polygon and Parse in 4 equal areas</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">       
+        <ul class="clear">
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>         
+        <li class="active"><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li class="active"><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+         <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+            <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+            <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/graph/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+		<li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioGrph.html">Graphics Portfolio</a></li>
+        <li><a href="#">Generate Polygon and Parse in 4 equal areas</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Generate Polygon and Parse in 4 equal areas</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6491 Computer Graphics (Graduate)</td>
+              <td>Jarek Rossignac</td>
+              <td>Fall 2014</td>
+              <td>Java/Processing</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+      <p>This also started life as a project for the Graduate Graphics class, although I expanded it due to interest in the topic.  
+      The purpose of the assignment was to divide a polygon into 4 equal areas using the minimum length cuts.  This is, of course, 
+      an analog of the Optimized Knapsack problem, which is NP-hard.  I expanded my solution to include planar polygons of any configuration.</p>
+      <p>I made the simplifying assumption that the half-area cut that was the shortest would be part of the solution, and I also didn't worry about finding cuts that stopped at
+      an internal vertex within the polygon (like the minimum cuts for an equilateral triangle). </p>
+      <p>First I would randomly generate a polygon - either convex 
+      or concave, and then I find the two closest edges whose endpoints form a polygon 
+      that enclose the "half-cut", with the rationale being that such a cut would probably be smallest - not always the case, but it worked 
+      pretty well.  Then I repeat the process with each piece from the original cut. </p>
+      <p>Generating the planar polygon was actually pretty tricky - determining how to make sure there were no loops or crossings was a good exercise.</p> 
+      <p>Here are videos of the project code running (with links if the videos don't play automatically) </p>
+      <table id="graphP6Tbl" >
+      <tr><td><a href="../../cvexclips/graph/proj6/graphProj6a.mp4">Square and Triangles</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/graph/proj6/graphProj6a.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/graph/proj6/graphProj6b.mp4">Irregular, Randomly Generated Convex and Concave Planar Polygons</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/graph/proj6/graphProj6b.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/graph/proj6/graphProj6c.mp4">Intermediate Keyframes via Bezier Interpolation</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/graph/proj6/graphProj6c.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/graph/proj6/graphProj6d.mp4">Intermediate Keyframes via Bezier Interpolation</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/graph/proj6/graphProj6d.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+	</table>
+       <p>Specifically, the problem presented in this project was to determine the minimum cut required to split a polygon into 4
+	regions of equal area. By minimum cut we mean the smallest edge we need to introduce into the polygon that
+	accomplishes the cut. Although the cut does not need to be connected, in my project all my cuts were connected,
+	although not all partitions required 3 cuts to accomplish the desired 4 equal area layout (the square for example only
+	needed 2). The possible applications of this type of algorithm include manufacturing, where moving a cutting head
+	or etching laser across a template needs to be accomplished in the minimum amount of moves while guaranteeing a
+	result, as well as routing algorithms that require load balancing (i.e. “equal area”) while guaranteeing minimum
+	travel routes (i.e. “min cut length”).</p>
+	<p>The challenges inherent in this problem are two fold – geometric and combinatorial. The geometric
+	challenges include determining an efficient storage mechanism for the polygon that optimizes accessibility while
+	minimizing storage requirements; calculating the required quantities such as cut position, length, geometry and
+	resultant area accurately and with sufficient generality to apply to as large a range of polygons as possible, and, in
+	the case of computational geometry, handling various floating-point-related errors and inaccuracies inherent in the
+	discrete representation of what is a continuous-realm structure. What I am calling the combinatorial challenges here
+	involve the same problems inherent in any of the brand of problems that are reducible to Optimized-SAT (in effect
+	NP-hard problems), where one of the problems is proving optimality in polynomial time.</p>
+	<p>My approach was a greedy one, where I found the minimum cut that partitioned the polygon in half
+	iteratively, and then repeated that procedure for each resultant half. I chose to restrict cuts to straight lines, but one
+	of the benefits of the greedy approach I took is that it enabled me to generate interior junctions as needed (since
+	each resultant ½ polygon is treated as a full poly, and the first cut is no different than subsequent ones). I generated
+	random polygons where there were no loops and vertices were at most some delta distance apart, but convex and
+	concave polygons were equally likely.</p>
+	<p>Simpler versions of this problem include limiting the polygon to being a simple shape such as a square or
+	triangle(where a solution can be derived analytically or via calculus in the form of a minimization problem relating
+	area to perimeter/cut length) as well as limiting the # of splits to just 2 (i.e. 1 cut). For example, to find the minimum
+	cut required to partition an equilateral triangle (the simplest case) into two equal areas would involve the equation
+	for finding the area of a triangle (½ * base * height) where the height calculation is base * sine(60). Define some
+	cut across the triangle parallel to the base, with the length of the cut being 2 * height'/sine(60) (where height' is the
+	distance from the peak vertex to the cut location), and the area of this new triangle being ½ * cutlen * cutlen *
+	sin(60). Setting this equal to ¼ * base * height of the original triangle (which is ½ the area) would yield an equation
+	for cutlen * cutlen = 2 /sqrt(3) * ½ * base * height = base * height * 1/(sqrt(3)) for a result of cutlen = sqrt(base *
+	height * 1/sqrt(3)). Since every side is the same length, this is not only the cut length required to cut it in half, but it
+	is the minimum cut length. If the triangle were not equilateral, the process could be accomplished the same way,
+	only using the smallest angle vertex of the triangle as the top vertex in the calculation, or the equations could be set
+	up to be vertex-independent using variables for the vert angles, and for what are defined as base and cutlen, and
+	solving cutlen in terms of base for each vertex and then finding the smallest of the 3 solutions.</p>
+	<p>My solution, as I stated earlier, involves finding the minimum cut length that “gets close” to cutting the
+	polygon in half. I do this via ray casting through a particular point that starts off at the COM of the polygon and
+	sweeping from 0 to pi to find the smallest cut that gets the closest to half area (first sorting on closeness of area to
+	be within some delta, and then sorting on size of cut). I then check how close the areas are to equal, and if they are
+	not “close enough” I incrementally move the ray cast point toward the com of the larger area and repeat the above
+	process until the areas are sufficiently close. I also determine if a particular cut goes through two edges that can
+	hold the half-area edge (determined by taking the area of the polygon bounded by the edges formed by the end
+	points of the edges – will give a min and max area bound for any cut that crosses those two edges. This could also
+	have been used alone to determine which pairs of edges would hold lists of all the cuts for ¼, ½ and ¾ area partitions
+	of the polygon respectively, all at once, and then determine which pairs were closest of each of the three groups to
+	determine between which edges each optimal cut would reside in. Once the closest pairs of edges that could hold a
+	cut containing ¼, ½ and ¾ of the polygon were determined, the actual cut within these edges could easily be
+	determined via interpolating between the end point edges, and then could be further minimized by rotating the cut
+	so that either it is perpendicular to each edge (if the edges are parallel) or rotating the cut around its midpoint to
+	form the base of the isosceles triangle described by the edges (i.e. so that the incident angles of the cut to each edge
+	were equal to 180 – the angle between the vectors described by the edges. These were the mechanisms I used in
+	my project, although the (much simpler) edge pairing algorithm I described I did not finish – all my results were
+	generated via the ray-casting algorithm.</p>
+	<p>	I organized my mesh in a variant of the described GEL structure, which I defined as a class. I added
+	components describing vertices, edges and loops (although I did not use loops) as well as the functionality required
+	to generate the random mesh, remove loops and self-intersections, space vertices sufficiently, and scale the mesh to
+	fill the screen. Furthermore, vertices can be added or deleted, the mesh can be deformed via dragging, as well as
+	moved or increased/decreased in size. I calculate the area of the mesh using the 2-d outer product, which Jarek
+	denotes as the det product, or the rotated dot product from every vertex and its neighbor to the origin, taking half
+	the sum of these products from every vertex. I reorient every mesh so that the result of this calculation is positive,
+	to have a “right hand” poly. I find intersections by checking whether the endpoints of each of 2 lines are always on
+	the same side, also using the det product of the vectors describing the orientation of one of the lines and the
+	endpoint of that line directed to each of the other points.</p>
+	<p>To deloop the mesh, I find intersections, and then iteratively “undo” them, either by reflecting a vertex or an
+	edge that crosses another edge to the other “legal” side of that edge, swapping adjacent verts that form a “bowtie”,
+	or else swapping the endpoint vertices of edges that cross (i.e. form an X in the mesh), so that the result is | | →
+	with 2 edges e1 and e2, e1.n.v ↔ e2.v and e1.v ↔ e2.n.v. This only works if the vertices are ordered consistently,
+	so I reorder them to be in the correct direction before I begin this process.</p>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

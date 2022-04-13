@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Graphics | Extrude Polygon and Generate 3D Corner Table</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+#graphP7Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+}
+#graphP7Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Extrude Polygon and Generate 3D Corner Table</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">       
+        <ul class="clear">
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>         
+        <li class="active"><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li class="active"><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+        <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+             <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+            <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/graph/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+		<li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioGrph.html">Graphics Portfolio</a></li>
+        <li><a href="#">Extrude Polygon and Generate 3D Corner Table</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Extrude Polygon and Generate 3D Corner Table</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6491 Computer Graphics (Graduate)</td>
+              <td>Jarek Rossignac</td>
+              <td>Fall 2014</td>
+              <td>Java/Processing</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+      <p>Another project from Jarek Rossignac's Graduate Graphics class.  For this assignment we were to take the 2-D polygon editing code from our last assignment and extrude it to
+3-D using a Minkowski sum of the 2D polygon with a cylinder. We were to accomplish this by taking the sidewalks we
+calculated in assignment 4, convert all their corners to vertices, and then extrude that sidewalk in the z direction to
+build a 3-D mesh. We needed to maintain connectivity (so instead of contained polygons, we have a single polygon.
+We needed to represent this structure using the same GVNS structure we used in assignment 4.
+For my assignment, I enabled simultaneous 2D and 3D construction within the same program – pressing 1
+toggles between the 2D version and the 3D extrusion. All the editing functionality from assignment 4 is maintained
+in the 2D version, while the 3D version can be modified by selecting multiple vertices and moving them in either X-Y
+or Z directions.</p><p>
+For selecting, I enabled both single click and a “Selection Plane”. The selected vertexes are yellow. The
+Selection Plane is a transparent plane that will select any vertexes in the 3D construct that are between the viewer
+and the plane. The plane is described by the viewing normal, so as the camera is moved, the plane's geometry stays
+perpendicular to the viewer, and will select or unselect vertexes as appropriate. To move the plane further or closer,
+press k and move the mouse up or down – the plane will move further or closer to the eye.</p><p>
+The mouse pointer actually shoots a ray toward the mesh, and selects the verts in the z==0 plane closest to
+where the ray hits the plane. This also uses the view normal, along with the FOV of the rendering. The moving
+green sphere represents where on the z==0 plane the mouse is currently selecting, with the three rgb axes moving
+with the sphere to provide some perspective and sense of placement within the scene. For 3D the intention is to use
+the Selection Plane to select vertexes (since often multiple verts are required to have a useful effect) so I restricted
+the ray-cast to the z==0 plane for the location visualization, but it could be easily extended to apply to any z location.</p><p>
+To accomplish the extrusion I take the polygon that has been edited, and then convert its sidewalks to arrays
+of points (maintaining rounded corners). I find the sidewalk that is contained by no other sidewalk and I then find
+the points closest to this sidewalk and the the points making up the sidewalks it contains. I duplicate this pair of
+points in both lists (they parent poly and the contained poly) for every contained poly. I reorder the contained poly
+so that this duplicated point is at the beginning and end of its list of points, and then I insert this list in the parent list,
+at the appropriate location, between the duplicated points that were correspond to the closest point in the parent
+poly.</p><p>
+Doing this for every sidewalk yields a single list of points, which I treat as the floor of the 3D extrusion. I
+duplicate this list, in reverse order, with some initial Z displacement, for the roof of the 3D extrusion, and then iterate
+through every point, building vertexes (a structure I use to hold a pt and some other relevant info for a vertex ) and
+the corner table for the new 3D extrusion. By constructing the corner table carefully, I can hardcode the V,N and S
+entries for every vertex pair. </p>      
+     <p>Below are videos of the mesh-building and editing process, with links if they don't play : </p>
+     <table id="graphP7Tbl" >
+      <tr><td><a href="../../cvexclips/graph/proj7/graphProj7a.mp4">Edit and Extrude Original Mesh</a></td></tr>
+      <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/graph/proj7/graphProj7a.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/graph/proj7/graphProj7b.mp4">Multiple Selection Editing</a></td></tr>
+      <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/graph/proj7/graphProj7b.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td>Move Top Vertices <a href="../../cvexclips/graph/proj7/graphProj7c.mp4">1</a>, <a href="../../cvexclips/graph/proj7/graphProj7d.mp4">2</a></td></tr>
+      <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/graph/proj7/graphProj7c.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/graph/proj7/graphProj7d.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/graph/proj7/graphProj7e.mp4">Navigate Connected 3-D Mesh</a></td></tr>
+      <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/graph/proj7/graphProj7e.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+	</table>      
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<html>
+<head>
+<title>John Turner | Computer Vision | Face Detection using HoG Features and SVM</title>
+<link href='http://fonts.googleapis.com/css?family=Nunito:300|Crimson+Text|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" title="Default" href="styles/github.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>  
+
+<link rel="stylesheet" href="../highlighting/styles/default.css">
+<script src="../highlighting/highlight.pack.js"></script>
+<style>
+#comvisP5Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+
+}
+#comvisP5Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Face Detection using HoG Features</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+      	<li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">      
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>          
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li class="active"><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+        <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+             <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>
+            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+             <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/comvis/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioCharAnim.html">Computer Vision</a></li>
+        <li><a href="#">Face Detection using HoG Features</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Face Detection using HoG Features</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6476 Computer Vision</td>
+              <td>James Hays</td>
+              <td>Fall 2015</td>
+              <td>MATLAB</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+		<div style="float: right; padding: 10px">
+		<img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_hog_template.png" />
+		<p style="font-size: 14px">Here's looking at you, kid.</p>
+		</div>
+		
+		<p>The purpose of this project was to detect faces in images.  
+		This was accomplished by using the following multi-step process : </p>
+		<ol>
+		<li>Convert images of a specific size of known faces to feature representations (Histogram of gradients)</li>
+		<li>Convert random patches of images known to not contain any faces to the same feature representations.</li>
+		<li>Build a classifier from these known positive (containing faces) and negative (not containing faces) feature sets.</li>
+		<li>Built potential face sub-images from all test images with a sliding window of varying effective size (by changing image size to change effective window size).</li>
+		<li>Use the built classifier to evaluate the potential face images found in the test images of interest. </li>
+		<li>Choose the highest scoring potential face images as determined by the classifier, recording the those for each scale that perform the best for each image.</li>
+		<li>Use Non-maximum surpression to minimze false positives and discard duplicates that vary only in scale, keeping the best scoring bounding boxes.</li>
+		</ol>
+		<div style="clear:both">
+		<h3>Overview of My Methods</h3>
+		<p>I performed multiple steps beyond the specific scope of the program to optimize the program's performance, either to increase speed or to increase effective data size.  
+		A particularly easy low hanging fruit item I was able to do was to flip the images left-to-right for both positive and negative training examples, effectively doubling the size of my
+		training data.  This was possible due to the lateral symmetry of faces, at least in so far as the positive examples were concerned, and the fact that the negative 
+		images will still be non-faces if flipped.</p>
+		<p>In an effort to get a reasonable performance comparison between the two feature encoding methods, I also handled both the UoCTTI HoG features 
+		and the Dalal-Triggs Hog features that vl_Feat supports.  In general the UoCTTI features performed about 5-10% better than the Dalal-Triggs features.</p>
+		<p>With complex processes such as the face detector, there are often multiple flags and parameters/hyperparameters that are required to govern the desired program flow and consumed in
+		multiple locations and files within the program.  Also, whenever working on classification tasks with large data sets requiring iterative refinement of these hyperparameters in order to optimize results, 
+		steps should be taken to compartmentalize computation so that there is a minimum of repeated work. </p> 
+		<p>Pursuant to these concerns, I chose to save the data I constructed for every step of the detection process 
+		so that I would not need to re-run any working code on the same data ever.  To accomplish this, as well as to facilitate modifying the output of the program,
+		the following structure was built, containing flags governing which algorithms are used, prefixes for file names and directories to save intermediate data sets, and parameters
+		governing the operations of the classifiers as well as the face detector itself.</p>
+		<pre><code>%struct holding params and args for program control
+		%modifiable
+		fld1 = 'hog_cell_size';                 val1 = 3;                           %size of HOG cell : 3,6,9
+		fld2 = 'use_DT';                        val2 = false;                       %whether to use UoCTTI (vl's default) or DALAL_TRIGGS
+		fld3 = 'use_vlHog';                     val3 = true;                        %whether or not to use vl's HOG or my implementation
+		fld13 = 'findHardNegative';             val13 = true;                       %whether to use hard negative mining
+		fld5 = 'useFlipPos';                    val5 = true;                        %flip positive images to get more positive training samples
+		fld19 = 'num_negative_examples';        val19 = 20000;                      %approx # of negative examples
+		
+		%non-mod
+		fld0 = 'template_size';                 val0 = 36;                          %size of face template
+		fld4 = 'numHogOrients';                 val4 = 9;                           %# of orientation directions in HOG - default is 9
+		fld6 = 'negFtrFilePrefix';              val6 = 'negFtrs';
+		fld7 = 'posFtrFilePrefix';              val7 = 'posFtrs';
+		fld8 = 'hardNegFilePrefix';             val8 = 'hnFtrs';                    %saved file for found hard neg features
+		fld9 = 'svmLambda';                     val9 = .00001;                      %lambda value for linear SVM
+		fld10 = 'nlSvmLambda';                  val10 = .1;                         %non linear svm lambda
+		fld11 = 'nlSvmGam';                     val11 = 11;                         %non linear svm gamma
+		fld12 = 'dtctrConfThresh';              val12 = .8;                         %detector confidence threshold
+		fld14 = 'classifier';                   val14 = 'linSVM';                   %classifier : 'linSVM', 'nonLinSVM', 'exemplarSVM' etc..
+		fld15 = 'dtctrFtrFilePrefix';           val15 = 'txtImgDtctr';              %file name prefix for text image detection files
+		fld16 = 'myFtrDescr';                   val16 = 'none';                     %which custom-built feature to use 
+		fld17 = 'DvalDiv';                      val17 = 31;                         %divisor val: UoCTTI == 31, DT hog == 36
+		fld18 = 'fileNameSuffix';               val18 = '';                         %build specific file name suffix 
+		fld20 = 'isHardNegDtctrRun';            val20 = false;                      %set to true when HN detector is run on negative images
+		feature_params = struct(fld0,val0,fld1,val1,fld2,val2,fld3,val3,fld4,val4, ...
+		              fld5,val5,fld6,val6,fld7,val7,fld8,val8,fld9,val9,fld10,val10, ...
+		              fld11,val11,fld12,val12,fld13,val13,fld14,val14,fld15,val15, ...
+		                fld16,val16,fld17,val17,fld18,val18,fld19,val19,fld20,val20);
+		</code></pre>
+		<p>I saved the derived Positive Training Example set, Negative Training Example set, and set of scores for all test images at all scales, 
+		as well as the detector results for all the Hard Negative face detections, bounding box-derived Hard Negative Training Example sets and Non-Linear 
+		SVM Kernels that I built for the Graduate/Extra Credit requirements.  Each of these files were saved with file names keyed by unique identifiers for
+		the various possible configurations of the detector, such as which HoG descriptor was used and how large was the HoG Cell. This enabled me to, for example,
+		automate the derivation of the optimal threshold value by enabling rapid iteration through all test images.  The following steps were
+		thus recorded : </p>
+		<ol>
+		<li>Positive Features</li>
+		<li>Random Negative Features</li>
+		<li>All Detector Scores for All Images at All Scales(Including Hard Negatives and the test image evaluations of both regular and Hard-Negative built classifiers)</li> 
+		<li>Mined Hard Negative Features</li>
+		<!-- <li>Nonlinear SVM Kernel and Hard Negative Mined Nonlinear SVM Kernel.</li>-->
+		</ol>
+		<h3>Convert Face Images to Positive Training Example Features</h3>
+		<div style="float: left; padding: 10px">
+		<img src="../../cvimages/comvis/comvisProj5/images/faceExample.jpg" />
+		<p style="font-size: 14px">Example face image.</p>
+		</div>
+		<p>We were given a database of known face images, and example of which can be seen to the left.  The images are all small (36x36 pixels), and black and white.  Using the chosen feature encoding
+		algorithm, the HoG features were derived for every image and its horizontally flipped twin for the user specified HoG cell size, using a variant of the code shown below, based upon chosen
+		feature encoding (Dalal-Triggs is shown) : </p>
+		<pre><code>%Build Positive Feature Set
+		if(feature_params.use_DT)         
+		    for i = 1:num_images
+		        img = im2single(imread(strcat(train_path_pos,'/',image_files(i).name)));
+		        HOGval = vl_hog(img,feature_params.hog_cell_size,'numOrientations',feature_params.numHogOrients, 'variant', 'dalaltriggs');
+		        features_pos(featidx,:) = reshape(HOGval,[1,D]);
+		        featidx = featidx + 1;
+		        if(feature_params.useFlipPos)
+		            imgFlip = fliplr(img);
+		            HOGvalFlip = vl_hog(imgFlip,feature_params.hog_cell_size,'numOrientations',feature_params.numHogOrients, 'variant', 'dalaltriggs');
+		            features_pos(featidx,:) = reshape(HOGvalFlip,[1,D]);
+		            featidx = featidx + 1;
+		        end
+		    end           
+		</code></pre>
+		<h3>Convert Known Faceless Images to Negative Training Example Features</h3>
+		<div style="float: right; padding: 10px">
+		<img src="../../cvimages/comvis/comvisProj5/images/facelessExample.jpg" />
+		<p style="font-size: 14px">Example source for negative training data.</p>
+		</div>
+		<p>This process was similar to that of building the Positive Training Examples above, except with images known to not contain faces.  An example of one such image is shown at right.</p>
+		<p> Since these images were of various sizes and known to be faceless, I needed to sample face-sized patches within the images to represent appropriately-sized "non-faces" for my negative
+		training exaples. This was complicated in that the images varied in size, and to get an even distribution amongst the images, I had to calculate how many samples each image should provide, out of the total sample budget.  
+		I did this by finding the ratio of each image's area to the total area of all negative example images.  This way, smaller images were sampled less and larger images were sampled more.</p>
+		<p>The process of deriving the negative examples of the data set was accomplished using the following code, again dependent upon chosen HoG cell size and 
+		feature encoding algorithm : </p>
+		<pre><code>%Build Negative Feature Set via Randomly Sampling Known Faceless Images
+		imgraw = im2single(imread(strcat(non_face_scn_path,'/',image_files(i).name)));
+		img = rgb2gray(imgraw);													%force images to b&w
+		imgDims = size(img);
+		idxBase = (i-1) * numSmplsPerImg;
+		randStRow = randi(imgDims(1)-featDim,numSmplsPerImg,1);					%precalc random rows and columns for speed
+		randStCol = randi(imgDims(2)-featDim,numSmplsPerImg,1);
+		jidx = 1;
+		for j = 1:numSmplsPerImg
+		    %sample every image
+		    imgSq = img(randStRow(j):randStRow(j)+featDim-1,randStCol(j):randStCol(j)+featDim-1); 
+		    HOGval = vl_hog(imgSq,feature_params.hog_cell_size,'numOrientations',feature_params.numHogOrients, 'variant', variantStr);
+		    features_neg(idxBase + jidx,:) = reshape(HOGval,[1,D]);
+		    jidx = jidx + 1;
+		    if(feature_params.useFlipPos)
+		        imgFlip = fliplr(imgSq);
+		        HOGFlipval = vl_hog(imgFlip,feature_params.hog_cell_size,'numOrientations',feature_params.numHogOrients, 'variant', variantStr);
+		        features_neg(idxBase + jidx,:) = reshape(HOGFlipval,[1,D]);
+		        jidx = jidx + 1;
+		    end
+		end
+		</code></pre>
+		<h3>Build Classifier from Training Examples</h3>
+		<p>For the baseline detector using the linear svm algorithm, building the classifier was fairly straightforward : </p>
+		<pre><code>%Build Linear SVM Classifier
+		trainImgFeatures = [features_pos; features_neg];						%aggregate + and - training examples
+		trainImgClasses = [ones(size(features_pos,1),1); -1*ones(size(features_neg,1),1)];		%set class as +1 or -1 appropriately
+		[w, b] = vl_svmtrain(trainImgFeatures', trainImgClasses, feature_params.svmLambda);
+		</code></pre>
+		<p>The results of the linear SVM calculation are the components of a linear vector equation that maps the training examples (each represented as row vectors of features)
+		 to their classification values.  Using this on the testing examples derives the classification guesses for the testing dataset.</p>
+		<h3>Face Detection Via Sliding Window</h3>
+		<p>To accomplish the sliding window face detector, the following algorithm was followed (again, with HoG algorithm and various parameter choices specified by the user) : </p>
+		<pre><code>%Sliding Window algorithm
+			scales = [1,0.95,0.85,0.75,0.65,0.55,0.5,0.45,0.35,0.25,0.15,0.1,0.05];
+		    for i = 1:numImgs   							%for each image
+		        img = imread( fullfile( test_scn_path, test_scenes(i).name ));
+					...
+		        for scale = scales          
+			        imgScaled = imresize(img,scale);
+			        [numRows, numCols] = size(imgScaled);
+			        numWinRows = floor((numRows - feature_params.template_size)/feature_params.hog_cell_size) + 1;
+			        numWinCols = floor((numCols - feature_params.template_size)/feature_params.hog_cell_size) + 1;
+			    
+			        %single call per image per scale
+			        imgHOGFtrs = vl_hog(imgScaled,feature_params.hog_cell_size,'numOrientations', ...
+			        				feature_params.numHogOrients, 'variant', variantStr);
+			        winHOGFtrs = zeros (numWinRows*numWinCols,D);
+			        
+			        for col = 1:numWinCols								%slide window through columns and then rows
+			            colIdx = (col-1)*numWinRows;
+			            for row = 1:numWinRows           
+			                tmpFtr = imgHOGFtrs(row:(row+numCells-1),col:(col+numCells-1),:);
+			                winHOGFtrs(colIdx + row,:) = reshape(tmpFtr,[1,D]);
+			            end    
+			        end
+			        
+			        scores = winHOGFtrs * w + b;                                            %evaluate all windows on this image at this scale               
+		            idxs = find(scores>feature_params.dtctrConfThresh);						%threshold scores by confidence and keep only those above
+		            curScale_confs = scores(idxs);                                          %get all confidences of good performing samples
+		            
+		            dtctWinCol = floor(idxs./numWinRows);									%build bounding box
+		            dtctWinRow = mod(idxs,numWinRows)-1;
+		            
+		            curScaleIDs = repmat({test_scenes(i).name}, size(idxs,1), 1);
+		            curScale_bboxes = [feature_params.hog_cell_size*dtctWinCol+1,  ...
+		                feature_params.hog_cell_size*dtctWinRow+1, ...
+		                feature_params.hog_cell_size*(dtctWinCol+numCells), ...
+		                feature_params.hog_cell_size*(dtctWinRow+numCells)]./scale;
+		            
+		            cur_bboxes      = [cur_bboxes;      curScale_bboxes];
+		            cur_confidences = [cur_confidences; curScale_confs];
+		            cur_image_ids   = [cur_image_ids;   curScaleIDs];
+		            
+		        end %For each scale
+		        %non_max_supr_bbox can actually get somewhat slow with thousands of
+		        %initial detections. You could pre-filter the detections by confidence,
+		        %e.g. a detection with confidence -1.1 will probably never be
+		        %meaningful. You probably _don't_ want to threshold at 0.0, though. You
+		        %can get higher recall with a lower threshold. You don't need to modify
+		        %anything in non_max_supr_bbox, but you can.
+		        [is_maximum] = non_max_supr_bbox(cur_bboxes, cur_confidences, size(img));
+		
+		        cur_confidences = cur_confidences(is_maximum,:);
+		        cur_bboxes      = cur_bboxes(     is_maximum,:);
+		        cur_image_ids   = cur_image_ids(  is_maximum,:);
+		
+		        bboxes      = [bboxes;      cur_bboxes];
+		        confidences = [confidences; cur_confidences];
+		        image_ids   = [image_ids;   cur_image_ids];
+		    end%per image
+		end
+		</code></pre>
+		<p></p>
+		<h3>Graduate/Extra Credit : Hard Negative Mining</h3>
+		<p>To increase the accuracy of the classification process, I chose to implement Hard Negative Mining.  
+		This process took the classifier built from the positive and random negative training examples and then 
+		used it in the detection process on the images that were known to not contain any faces.  The resultant bounding boxes 
+		from this process were then added to the negative training examples from the random sampling and the classifier was rebuilt.</p>  
+		<p>In general this extra processing improved performance by a few percent, but for the UoCTTI feature descriptor, it only helped 
+		when it was used with the larger HoG size of 6 (.889 average precision with Hard Negatives vs. .878 without).  The results for 
+		HoG pxl size of 4 was pretty much the same (.915 with vs. .913 without), and the 
+		performance for HoG pixel size of 3 suffered by a small amount (.931 without Hard Negative Mining vs .921 with Hard Negative Mining) 
+		although this could have been purely due to the random nature of the original sampling of the non-face images.</p>
+		<p>Another benefit of this process was that fewer false positives were generated, as can be seen in the image table below.</p>  
+		<h3>Graduate/Extra Credit : Dalal-Triggs Feature Descriptor</h3>
+		<p>I used the built in vl_Feat implementation of DalalTriggs descriptor to benchmark the performance between the two.  The DT HoG generally performed only about 90% as 
+		well as the UoCTTI HoG, regardless of HoG pixel size, when used without hard negative mining, while it also exhibited the greatest benefit from 
+		the Hard Negative mining, particularly at the largest HoG pixel size of 6. (0.847 with hard negative mining vs. 0.792 without). </p>
+		<!-- 
+		<h3>Graduate/Extra Credit : Nonlinear SVM</h3>
+		<p></p>
+		-->
+		<h3>Results - Average Precision</h3>
+		<table border=1px width=100%>
+		<tr><td>Feature Descriptor</td><td>HoG Size</td><td>Approx. # Negative Examples</td><td>Classifier</td><td>Is Hard Negative Mined?</td><td>Threshold</td><td><span class="boldTxt">Performance</span></td></tr>
+		<tr bgcolor="#e6e6e6"><td>vlFeat : UoCTTI</td><td>6</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>No</td><td>-.7</td><td><span class="boldTxt">87.8%</span></td></tr>
+		<tr bgcolor="#e6e6e6"><td>vlFeat : UoCTTI</td><td>4</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>No</td><td>-.7</td><td><span class="boldTxt">91.3%</span></td></tr>
+		<tr bgcolor="#e6e6e6"><td>vlFeat : UoCTTI</td><td>3</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>No</td><td>-.3</td><td><span class="boldTxt">93.1%</span></td></tr>
+		<tr><td>vlFeat : UoCTTI</td><td>6</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>Yes</td><td>-.8</td><td><span class="boldTxt">88.9%</span></td></tr>
+		<tr><td>vlFeat : UoCTTI</td><td>4</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>Yes</td><td>-.5</td><td><span class="boldTxt">81.5%</span></td></tr>
+		<tr><td>vlFeat : UoCTTI</td><td>3</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>Yes</td><td>-.5</td><td><span class="boldTxt">92.6%</span></td></tr>
+		<tr bgcolor="#e6e6e6"><td>vlFeat : DT</td><td>6</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>No</td><td>-.3</td><td><span class="boldTxt">79.2%</span></td></tr>
+		<tr bgcolor="#e6e6e6"><td>vlFeat : DT</td><td>4</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>No</td><td>-.7</td><td><span class="boldTxt">86.8%</span></td></tr>
+		<tr bgcolor="#e6e6e6"><td>vlFeat : DT</td><td>3</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>No</td><td>.1</td><td><span class="boldTxt">89.3%</span></td></tr>
+		<tr><td>vlFeat : DT</td><td>6</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>Yes</td><td>-.5</td><td><span class="boldTxt">84.7%</span></td></tr>
+		<tr><td>vlFeat : DT</td><td>4</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>Yes</td><td>-.7</td><td><span class="boldTxt">87.1%</span></td></tr>
+		<tr><td>vlFeat : DT</td><td>3</td><td>40000 (20k flipped L->R)</td><td>Linear SVM</td><td>Yes</td><td>-.7</td><td><span class="boldTxt">89.5%</span></td></tr>
+		</table>
+		
+		<h3>Hog Templates for various configurations : </h3>
+		<h3>Linear SVM</h3>
+		<h5>Without Hard Negative Mining</h5>		
+		<table id="comvisP5Tbl" >
+		<tr><td>Dalal_Trigs HoG size 3</td><td>Dalal_Trigs HoG size 4</td><td>Dalal_Trigs HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_hog_template.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_hog_template.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_hog_template.png"  /></td>
+		</tr>
+		
+		<tr><td>UoCTTI HoG size 3</td><td>UoCTTI HoG size 4</td><td>UoCTTI HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_hog_template.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_hog_template.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_hog_template.png" /></td>
+		</tr>
+		</table>		
+		<h5>With Hard Negative Mining</h5>
+		<table id="comvisP5Tbl" >
+		<tr><td>Dalal_Trigs HoG size 3</td><td>Dalal_Trigs HoG size 4</td><td>Dalal_Trigs HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_hn_hog_template.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_hn_hog_template.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_hn_hog_template.png"  /></td>
+		</tr>
+		
+		<tr><td>UoCTTI HoG size 3</td><td>UoCTTI HoG size 4</td><td>UoCTTI HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_hn_hog_template.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_hn_hog_template.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_hn_hog_template.png" /></td>
+		</tr>
+		</table>
+		<h3>Precision Recall Curves</h3>
+		<h3>Linear SVM</h3>
+		<h5>Without Hard Negative Mining</h5>
+		<table id="comvisP5Tbl" >
+		<tr><td>Dalal_Trigs HoG size 3</td><td>Dalal_Trigs HoG size 4</td><td>Dalal_Trigs HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_thrsh_1average_precision.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_thrsh_-7average_precision.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_thrsh_-9average_precision.png"  /></td>
+		</tr>
+		
+		<tr><td>UoCTTI HoG size 3</td><td>UoCTTI HoG size 4</td><td>UoCTTI HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_thrsh_-5average_precision.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_thrsh_-6average_precision.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_UoCTTI_hogCSz_6_hogOrnt_9_thrsh_-6average_precision.png" /></td>
+		</tr>
+		</table>
+		<h5>With Hard Negative Mining</h5>
+		<table id="comvisP5Tbl" >
+		<tr><td>Dalal_Trigs HoG size 3</td><td>Dalal_Trigs HoG size 4</td><td>Dalal_Trigs HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_hn_1_thrsh_-6average_precision.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_hn_1_thrsh_-7average_precision.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_hn_1_thrsh_-5average_precision.png"  /></td>
+		</tr>
+		
+		<tr><td>UoCTTI HoG size 3</td><td>UoCTTI HoG size 4</td><td>UoCTTI HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_hn_1_thrsh_-4average_precision.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_hn_1_thrsh_-6average_precision.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/pr/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_hn_1_thrsh_-8average_precision.png"  /></td>
+		</tr>
+		</table>
+		<h3>Sample Detections (with the most restrictive threshold on each)</h3>
+		<h3>Linear SVM</h3>
+		<h5>Without Hard Negative Mining</h5>
+		<table id="comvisP5Tbl" >
+		<tr><td>Dalal_Trigs HoG size 3</td><td>Dalal_Trigs HoG size 4</td><td>Dalal_Trigs HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_detections_Argentina_noHn.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_detections_Argentina_noHn.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_detections_Arsenal.png"  /></td>
+		</tr>
+		
+		<tr><td>UoCTTI HoG size 3</td><td>UoCTTI HoG size 4</td><td>UoCTTI HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_detections_original2.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_detections_Argentina.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_detections_Argentina.png" /></td>
+		</tr>
+		</table>
+		<h5>With Hard Negative Mining</h5>
+		<table id="comvisP5Tbl" >
+		<tr><td>Dalal_Trigs HoG size 3</td><td>Dalal_Trigs HoG size 4</td><td>Dalal_Trigs HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_detections_Argentina.png"  /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_detections_Argentina.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_DTalg_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_detections_Argentina_hn.png"  /></td>
+		</tr>
+		<tr><td>UoCTTI HoG size 3</td><td>UoCTTI HoG size 4</td><td>UoCTTI HoG size 6</td></tr>
+		<tr>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_3_hogOrnt_9_detections_Argentina_hn.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_4_hogOrnt_9_detections_Argentina_hn.png" /></td>
+		<td><img src="../../cvimages/comvis/comvisProj5/images/_VLHog_UoCTTI_TmpSz_Flipped_36_hogCSz_6_hogOrnt_9_detections_Argentina_hn.png" /></td>
+		</tr>
+		</table>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

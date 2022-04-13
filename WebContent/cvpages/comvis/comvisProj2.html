@@ -1,0 +1,591 @@
+<html>
+<head>
+<title>John Turner | Computer Vision | Local Feature Matching using Harris Corners and SIFT</title>
+<link href='http://fonts.googleapis.com/css?family=Nunito:300|Crimson+Text|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" title="Default" href="styles/github.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>  
+
+<link rel="stylesheet" href="../highlighting/styles/default.css">
+<script src="../highlighting/highlight.pack.js"></script>
+<style>
+#comvisP2Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+
+}
+#comvisP2Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Local Feature Matching using Harris Corners and SIFT</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+      	<li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">      
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>          
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li class=""><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+        <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+             <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>
+            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+            <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/comvis/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioCharAnim.html">Computer Vision</a></li>
+        <li><a href="#">Local Feature Matching using Harris Corners and SIFT</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Local Feature Matching using Harris Corners and SIFT</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6476 Computer Vision</td>
+              <td>James Hays</td>
+              <td>Fall 2015</td>
+              <td>MATLAB</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+		<table id="comvisP2Tbl">
+		<tr><td>
+		<div style="float: right; padding: 20px; widht:100%">
+		<img src="../../cvimages/comvis/comvisProj2/images/rushmoreRawPoints.jpg" />
+		<p style="font-size: 14px">That's a lot of points - 1000 initial interest points on Mount Rushmore.</p>
+		</div>
+		</td></tr>
+		</table>
+		<p> 	This project was concerned with implementing an algorithm that could recognize
+		similarites between two images by finding interesting features in each and matching these
+		features accurately.  Through this mechanism a sufficiently high accuracy level of the 
+		matchings would imply that the images were of the same thing.  The algorithm driving this
+		process had 3 parts : 
+		</p>
+		<ol>
+		<li>Find Interesting Points in Each Image</li>
+		<li>Devise a Descriptor for These Points</li>
+		<li>Match Descriptors of Points in Both Images.</li>
+		</ol>
+		
+		<h3>Part 1 : Finding Interest(ing) Points - Harris Corner Detector</h3>
+		<p> 	What is an interesting point?  For our purposes, we define "interesting" as the state of 
+		being recognizable and somewhat unique, at least locally.  In other words, the point we find interesting
+		will be easily distinguishable from its immediate surroundings - if we were to obvserve the image with a jeweler's
+		glass, we want to find an area we can easily recognize.  Computationally, we achieve this by finding areas of multi-directional 
+		gradients in intensity around a single pixel in the image, characteristics most obviously seen in corners.    
+		</p>
+		<p> 	A word about gradients. In an image, gradients are used to describe a change in intensity or color.
+		A straight edge, like a wall, will show a significant gradient in a single direction, normal to the edge, 
+		denoting the change in intensity between the wall and its background in the image.  Corners will exhibit gradients
+		that radiate outward, starting normal to one of the constituent edges of the corner and sweeping around to the other.
+		</p>
+		
+		<p>
+			For my implementation of the corner detection, I followed a multi-step recipe.</p>
+		<ol>
+		<li>Filter Images with Derivative of Gaussian in X and Y, revealing edges in each direction.  
+		I implemented both the Harris computational stencil and the Derivative of Gaussian method for building the filter kernel, 
+		and ended up using the Derivative of Gaussian because the results were stronger.  I also used a variety of methods to 
+		arrange my image as I convolved it with the filter - keeping colors independent, averaging the three channels(Intensity in the HSI model) 
+		or finding the mean of the extremal values in each channel (Lightness in the HSL model), and ultimately chose the Lightness model, 
+		which gave an improvement of 2-3% in match accuracy, all other elements of the algorithm being equal.  I used my implementation
+		of MyImFilter and specifically FFT, from the first project for the convolutions, since I understood it and already had some 
+		built in utilities to manage different channels.</li>
+		<h3>Notre Dame Image 1</h3>
+		<pre><code>%Building Edge Images
+		    sig = 1;
+		    sz = (sig*4)+1;
+		    dgfilter=fspecial('gauss',[sz, sz], sig);
+		    [dgx,dgy] = gradient(dgfilter);   
+		    %gradient of image in x dir
+		    Ix = myImFilter(image, dgx,filterMethod);
+		    %gradient of image in y dir
+		    Iy = myImFilter(image, dgy,filterMethod); 
+		</code></pre>
+		<table id="comvisP2Tbl">
+		<tr><td>1) Derivative of Gaussian in X Convolution</td><td>Derivative of Gaussian in Y Convolution</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\xGradImg1.jpg" width="400px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\yGradImg1.jpg"  width="400px"/></td>
+		</tr>
+		</table>
+		<li>I built the components for the Cornerness Function, the three component matrices of the outer product of the two resultant
+		edge image matrices convolved with a weighting function (another, larger Gaussian).  I then used these components to derive 
+		the Cornerness function, using an alphaR value of .06 as suggested in the text.</li>
+		<pre><code>%Building Cornerness Image
+		    sig = 2;
+		    %gaussian local weight - resize for convolution
+		    w = fspecial('gauss', feature_width+1, sig);
+		    Ix2 = conv2(Ix(:,:,1).^2, w, 'same'); 
+		    Iy2 = conv2(Iy(:,:,1).^2, w, 'same'); 
+		    Ixy = conv2(Ix(:,:,1).*Iy(:,:,1), w, 'same');    
+		    Hs = (Ix2.*Iy2 - Ixy.^2) - alphaR*(Ix2 + Iy2).^2;  
+		</code></pre>
+		<table id="comvisP2Tbl">
+		<tr><td>2)Gaussian Convolved X*X edges</td><td>Gaussian Convolved Y*Y edges</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\ix2img1.jpg" width="400px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\iy2img1.jpg" width="400px"/></td>
+		</tr>
+		
+		<tr><td>2)Gaussian Convolved X*Y images</td><td>Solution to the "Cornerness" function</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\ixyimg1.jpg" width="400px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\hsimg1.jpg"  width="400px"/></td>
+		</tr>
+		</table>
+		<li>I then thresholded the images, by first building a mosaic-like image representing a uniform intensity in a small 
+		neighborhood around a particularly bright spot in the Cornerness image, and then iteratively deriving an appropriate threshold on these patches 
+		(using adaptive time stepping/threshold modification) to find the number of points I wanted from each image.  I had to take care to not
+		find points too close to the edge of the image, since this would compromise the descriptor building in Part 2, which required a block of, in
+		my case, 16x16 pixels to comprise the neighborhood around each point.</li>
+		<pre><code>%Thresholding with Adaptive Timestep
+		%build boundary of no interest points around edges, for feature assignment
+		tmpHs = zeros(size(Hs));
+		tmpHs(bounds:(picH-bounds),bounds:(picW-bounds),:) = Hs(bounds:(picH-bounds),bounds:(picW-bounds),:);
+		Hs_prime = ordfilt2(tmpHs, orderth, ones(fwp1));       %2X as fast as colfilt on this data
+		lNumPts = .999 * numPtsDesired;
+		hNumPts = 1.001 *numPtsDesired;
+		maxIters = numPtsDesired * 10;
+		threshDir = 0;
+		lRate = .01;
+		while(((numPts < lNumPts)||(numPts > hNumPts)) && (iters < maxIters))
+		    %i say, adaptive time step, my good man!
+		    if(numPts < lNumPts)
+		        thresh = thresh - lRate;
+		        if(threshDir == 1)  %if last time it went up, then it's bouncing, decrease lRate
+		            lRate = lRate * .51;
+		        elseif (threshDir == -1)    %last time went down too, increase lRate
+		            lRate = lRate * 1.9;
+		        end
+		        threshDir = -1;
+		    elseif (numPts > hNumPts)
+		        %thresh = thresh * 1.001;
+		        thresh = thresh + lRate;
+		        if(threshDir == -1)  %if last time it went down, then it's bouncing, decrease lRate
+		            lRate = lRate * .51;
+		        elseif (threshDir == 1)    %last time went up too, increase lRate
+		            lRate = lRate * 1.9;
+		        end
+		        threshDir = 1;
+		    end
+		    %finds actual corner point in patch that exceeds threshold
+		    HsNew = (Hs_prime > thresh ) & (Hs_prime == tmpHs);			
+		    numPts = sum(sum(HsNew));
+		    iters = iters+1;
+		end
+		</code></pre>
+		<table id="comvisP2Tbl">
+		<tr><td>3)Neighborhoods used to Threshold Points</td><td>Interest Points -> Max Points in the Neighborhoods</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\NbrhdsOfMaxImg1.jpg" width="500px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image1\MaxPtsInNbrdimg1.jpg" width="500px"/></td>
+		</tr>
+		</table>
+		<li>Notre Dame Image 2 results can be seen below.</li>
+		</ol>
+		<div style="clear:both">
+		<h3>Part 2 : Describing these points - Building a SIFT-inspired Descriptor</h3>
+		<p> 	How can we clearly describe these interest points that we have accumulated in each image? Since our interesting points are 
+		described as being locally distinguished via their gradients, we use the orientation of these gradients to help describe these points.  
+		We also look at the orientation of the gradients in a neighborhood around the points, extending our definition of "interesting" from part 1 
+		(where we say a point is interesting if we can distinguish it within a small neighborhood) to include the neighborhood itself 
+		(i.e. using gradients to distinguish characteristics within small neighborhoods from other similar sized neighborhoods within the image).
+		</p>
+		<p>The algorithm to accomplish this consisted of convolving our image with directional filters to derive the gradients in each of 8 directions, 
+		then examining a patch around each interest point, weighted with a Gaussian centered on the interest point, to accumulate a histogram of 
+		gradients in each direction, in each of 16 bins around the interest point, for a grand total of 128 values in the descriptor 
+		for each interest point. In more specific detail : </p>
+		<ol>
+		<li>Find the Gradients of the image in each of 8 directions (+\- 45, 90 and 135 degrees, along with 0 and 180).  I again used the Derivative
+		of Gaussians for this filter, finding the derivative in the X and Y directions and then building the rotated filter through a linear combination
+		of these filters weighted by sines and cosines.  Again I used my implementation of myImFilter and FFT from the first project, since in some ways it
+		was more resilient/easy to use than conv2, although I also made use of conv2 in certain circumstances.</li>
+		<pre><code>%Filtering Image in each of 8 directions - using a small 5x5 stencil
+		sig = 1;
+		sz = (sig*4)+1;
+		dgfilter=fspecial('gauss',[sz, sz], sig);
+		[dgx,dgy] = gradient(dgfilter); 
+		step = pi/4.0;
+		stop = 2*pi;
+		idx = 1;
+		for theta = 0 : step : stop
+		       %to find derivative along any orientation theta, given angle theta,
+		       dgTheta = cos(theta)*dgx + sin(theta)*dgy;
+		       imgGrad(idx) = myImFilter(image, dgTheta,2);
+		end;
+		</code></pre>
+		<h3>Orientation Gradients of Notre Dame Picture 1 for Descriptor Building</h3>
+		<table id="comvisP2Tbl">
+		<tr><td>0 degrees</td><td>45 degrees</td><td>90 degrees</td><td>135 degrees</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\0degImg1.jpg" width="250px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\45degImg1.jpg"  width="250px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\90degImg1.jpg" width="250px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\135degImg1.jpg"  width="250px"/></td>
+		</tr>
+		<tr><td>180 degrees</td><td>225 degrees</td><td>270 degrees</td><td>315 degrees</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\180degImg1.jpg" width="250px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\225degImg1.jpg" width="250px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\270degImg1.jpg" width="250px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image1\315degImg1.jpg" width="250px"/></td>
+		</tr>
+		</table>
+		<li>Build orientation histograms for each direction.  For each of the 8 directions, for every interest point, I weight the neighborhood pixels of the interest
+		point via a gaussian that extends beyond the bounds of the neighborhood, and then we partition the neighborhood into a 4x4 grid, representing bins, with each 
+		containing, in my case, 16 pixels.  I then build a histogram of the weighted gradients and assign them to their respective bins.  I actually interpolated around each point, starting
+		with a neighborhood that was 1 pixel larger, although this probably had very little impact on the final result.  Since I iterate through the point neighborhoods with a particular 
+		direction gradient, I have to build the feature vector in slices. </li>
+		<pre><code>%Filtering Image in each of 8 directions - using a small 5x5 stencil
+		fwHf = feature_width * .5;    
+		%weighting window
+		w = fspecial('gauss', feature_width+1, fwHf);    
+		%for interpolating gradients from odd-sized region around interest point to even sized region 
+		movAvgBlk = ones(2,2) *.25;  
+		blkSumFunc = @(block_struct) sum(sum(block_struct.data)) * ones(size(block_struct.data)*.25);
+		fIdxVec = (1:8:128);     	%idx's of first orientation values
+		for pIdx = 1:numPts
+		    %interpolates a matrix, by finding midway values between each cell (ctr of 4 cells)
+		    %conv2 here is building a moving average (interpolation) of each 2x2 block in the gradient 
+		    %block around each point, which is 17x17, so that result is 16x16
+		    %full gives res 1 pxl border, since filter is movAvgBlk 2x2
+		    imTmp = conv2(imgGrad(rowSt(pIdx):rowEnd(pIdx),colSt(pIdx):colEnd(pIdx)).*w, movAvgBlk, 'full');   
+		    imgGradBlock = imTmp(2:(end-1),2:(end-1));
+		    %this gives the sum of all the imgGradBlock values in each of the 4x4 sub-windows 
+		    %of the imgGradBlock - blkSz is 1/4 feature width
+		    blkSum = blockproc(imgGradBlock,[blkSz blkSz], blkSumFunc);
+		    features(pIdx,fIdxVec) = blkSum(:);            
+		end
+		</code></pre>
+		<li>Normalize the results.  I normalize every feature vector, threshold the max normalized value of any dimension to be .2, 
+		raise this capped vector to the .23 power (which increases and sorta "smears" out very small values, exagerating small variances which 
+		I found helped in differentiation). These </li>
+		<pre><code>%Normalize each complete vector
+		fCapVal = .2;
+		for pIdx = 1:numPts
+		    blkSum = features(pIdx,:);
+		    blkSum = blkSum/norm(blkSum);       	%normalized
+		    blkSum = min(fCapVal,blkSum);         	%cap values at .2
+		    blkSum = blkSum.^.23;       			%raise to root power - spreads out values < .4
+		    blkSum = blkSum/norm(blkSum);       	%normalized again
+		    features(pIdx,:) = blkSum;        
+		end
+		</code></pre>
+		</ol>
+		<h3>Part 3 : Matchmaking - Matching Points by Minimizing Feature Distance</h3>
+		<p> 	To draw correspondences between the two images, we need to match the interesting points by finding those in 
+		each image whose descriptors were most alike.  In algorithmic terms, this problem is a variant of the Knapsack problem, where multiple
+		constraints are governing the optimization process.  We wish to find pairs of features that are the most similar (minimizing 
+		their differences) while maximizing the ratio of differences between the best match and next best match for each of them.  
+		This implies that sometimes the nearest feature is not necessarily the best feature to match to.</p>
+		<p>This algorithm was also involved : </p>
+		<ol>
+		<li>Build a Table of Sorted Feature Distances.  I iterated through each pair of points, found the L2 norm (well, specifically the 
+		L2.1 norm - believe it or not, it made a difference, a few percent in accuracy on both Notre Dame and Rushmore), and recorded 
+		these distances, sorted.  I also recorded the ratio of each distance to next nearest neighbor, for every pair of points and 
+		their next neighbors, distance-wise.</li>
+		<pre><code>%Build a table that holds all points sorted by distance to all neighbors.
+		for idx1 = 1:num_features1
+		    tmpDists = zeros(num_features2,1);
+		    idx2Vec = zeros(num_features2,1);
+		    tmpIdx = 1;
+		    for idx2 = 1:num_features2
+		        tmpDists(tmpIdx,1) = norm(features1(idx1,:) - features2(idx2,:),normType);  %L2 norm for dist         
+		        idx2Vec(tmpIdx,1) = idx2;
+		        tmpIdx = tmpIdx+1;
+		    end
+		    %sorted by increasing distance
+		    [tmpSortedDists,sorted_idxs] = sort(tmpDists,'ascend');
+		    sortedIdx2Vec = idx2Vec(sorted_idxs,:);        
+		    ratIdx = [1:(num_features2-1)];                 %distance to closest idx vec
+		    ratIdx1 = ratIdx+1;                             %distance to nextclosest idx vec 
+		    tmpDistRats = tmpSortedDists(ratIdx)./tmpSortedDists(ratIdx1);       
+		    ratioDists = abs(tmpDistRats - optDistRatVal);  %minimize the difference of this ratio and .45
+		
+		    ratioDists(num_features2) = 999;
+		    
+		    distEnd = (distValsIdx+num_features2-1);
+		    idx1Col = repmat(idx1,num_features2,1);
+		    %structure holding distance value-sorted vals
+		    distVals(distValsIdx:distEnd, colIdx) = idx1Col;
+		    distVals(distValsIdx:distEnd,(colIdx+1)) = sortedIdx2Vec;
+		    distVals(distValsIdx:distEnd,(colIdx+2)) = tmpSortedDists;
+		    distVals(distValsIdx:distEnd,(colIdx+3)) = ratioDists;
+		
+		    colIdx = colIdx + numDistCols;
+		end    %for each idx1
+		</code></pre>
+		<li>Knapsack! (sorta).  Next, I decide upon feature pairs.  This is a dynamic programming problem with a few tricky characteristics.  
+		For one thing, since I drove my distance-minimization loop primarily with the points from Image 1, the points from Image 2 can be 
+		mapped (at this stage) to multiple points in Image 1.  I have to make sure that I don't multi-assign points from Image 2, and I 
+		also want to make sure that I don't have Image 2 mapped to a less than ideal candidate just because I derived the distances from the point of view
+		of the Image 1 points.  In other words, I have to make sure that every point is mapped to its nearest neighbor, not just those from Image 1.  To accomplish this, 
+		I tabulate the idxs of the points in Image 1 that match each particular Image 2, along with their distance, NNDR, and the match index of any existing match.  This way, if
+		I get a collision, where an Image 2 point comes up as the closest point to two different points in Image 1, I can pick the best match for it, and remap the orphaned Image 1 point
+		to its next best match, if it is available.  This was a bit tricky to debug. </li>
+		<pre><code>%Put in idx of match with particular idx2 if matched, and dist, and ratio, and matchIdx of previous match
+		matchedIDX2 = zeros(num_features2,4);  
+		for idx1Loop = 1:num_features1
+		    idx1 = idx1Loop;
+		    oldMatchIdx = matchIdx;
+		    compIdx = 1;                                        %computing row for this idx
+		    found = 0;
+		    while ((compIdx <= maxRows) && (found == 0))
+		        distValsIdx = ((idx1-1) * 4) + 1;               %col idx in distVals table for idx1
+		        idx2 = distVals(compIdx,distValsIdx+1);         %current idx2 being compared
+		        dist12 = distVals(compIdx,distValsIdx+2);       %distance between 1 and 2
+		        distRat12 = distVals(compIdx,distValsIdx+3);    %dist ratio between 1 and 2 and 1 and next 2   
+		        confVal = (1 - 2*distRat12);
+		        if(dist12 < optDistVal)                 		%if dist ratio of closest match is less than ratio threshold
+		            if((matchedIDX2(idx2,1) == 0))% && (1 - 2*distRat12) > minConf)          %idx2 not been matched yet
+		                matchedIDX2(idx2,1) = idx1;
+		                matchedIDX2(idx2,2) = dist12;
+		                matchedIDX2(idx2,3) = confVal;  
+		                matchedIDX2(idx2,4) = matchIdx;
+		                found = 1;
+		                matches(matchIdx,1) = idx1;             %img1 idx
+		                matches(matchIdx,2) = idx2;     		%img2 idx
+		                matchDists(matchIdx,1) = dist12;  		%dist
+		                confidences(matchIdx) = confVal;
+		            else                                		%has been matched already - keep match with smallest distance
+		                if(matchedIDX2(idx2,2) > dist12)    	%this match is closer than old match, find new values for old match
+		                    matchedIDX2(idx2,1) = idx1;
+		                    matchedIDX2(idx2,2) = dist12;
+		                    matchedIDX2(idx2,3) = confVal;  
+		                    matchedIDX2(idx2,4) = matchIdx;
+		                    found = 1;
+		                    matches(matchIdx,1) = idx1;         %img1 idx
+		                    matches(matchIdx,2) = idx2;     	%img2 idx
+		                    matchDists(matchIdx,1) = dist12;  	%dist
+		                    confidences(matchIdx) = confVal;                              
+		                    compIdx = compIdx + 1;           	%look at next row in table for old idx1 this replaced
+		                    idx1 = matchedIDX2(idx2,1);
+		                    oldMatchIdx = matchIdx;
+		                    matchIdx = matchedIDX2(idx2,4);
+		                else                                	%this match is further than old match, find new values for this match
+		                    compIdx = compIdx + 1;          	%look at next row in table
+		                end
+		            end%if idx2 hasn't been matched yet
+		        else
+		            compIdx = maxRows+1;
+		        end %if dist < distThresh            
+		    end %while not found or compIdx < 10 ( compIdx is row idx in distVals)
+		    matchIdx = oldMatchIdx;
+		    if found == 1
+		        matchIdx = matchIdx + 1; 
+		    end       
+		end%for idx1
+		</pre></code>
+		<li>Threshold all matches by how "confident" I am in them.  I used a variant of the ratio test as a measure of the confidence of a match, 
+		where built a probability of the match being good as (1 - 2 * NNDR).  I then discard any matches that have a confidence probability of less than .3 </li>
+		<pre><code>%Sort by confidence and discard the slackers.
+		[confidences, ind] = sort(confidences, 'descend');
+		matches = matches(ind,:); 
+		idxToLose = any(confidences < minConfidence,2);
+		confidences(idxToLose,:)=[];
+		matches(idxToLose,:)=[];
+		</pre></code>
+		</ol>
+		<h3>Results</h3>
+		<table id="comvisP2Tbl">
+		<tr><td>
+		<div style="float: right; padding: 20px">
+		<img src="../../cvimages/comvis/comvisProj2/images/102and10.jpg"  width="800px"/>
+		<p style="font-size: 14px">Notre Dame 102 correct matches and 10 misses.  Not too shabby.</p>
+		</div>
+		</td></tr></table>
+		<p>I got pretty good results with both Notre Dame and Mount Rushmore.  When originally finding 1000 interest points, 
+		the Notre Dame image pair resulted in 102 correct matches and 10 misses, while the Rushmore resulted in 88 correct matches and 14 misses, for 13.73% error rate.  
+		Initially I got none correct on the Gaudi image, but when I made sure that both images were of similar sizes, I did better, although the correspondence evaluator 
+		still didn't accept any of my matches.  However, when I rescaled the image algorithmically to find the interest points and build the feature vectors, 
+		the evaluator did recognize the results I got, as can be seen below. </p>
+		<table id="comvisP2Tbl">
+		<tr><td>
+		
+		<div style="float: left; padding: 20px">
+		<img src="../../cvimages/comvis/comvisProj2/images/rushmore88and14.jpg"  width="900px"/>
+		<p style="font-size: 14px">Rushmore 88 correct matches and 14 misses.  Not as good as Notre Dame, but still not bad.</p>
+		</div>
+		<div>
+		<img src="../../cvimages/comvis/comvisProj2/images/gaudiResize.jpg"  width="900px"/>
+		<p style="font-size: 14px">Gaudi is ok when resized (algorithmically, so both images are fairly close in size), although the evaluator couldn't recognize it.</p>
+		</div>
+		</td></tr></table>
+		<h3>Other Images of My Results</h3>
+		<h4>Part 1 - Interest Points on Notre Dame Picture 2</h4>
+		<table id="comvisP2Tbl">
+		<tr><td>1)Derivative of Gaussian in X Convolution</td><td>Derivative of Gaussian in Y Convolution</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\xGradImg2.jpg" width="500px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\yGradImg2.jpg"  width="500px"/></td>
+		</tr>
+		<tr><td>2)Gaussian Convolved X*X edges</td><td>Gaussian Convolved Y*Y edges</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\ix2img2.jpg" width="500px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\iy2img2.jpg" width="500px"/></td>
+		</tr>
+		
+		<tr><td>2)Gaussian Convolved X*Y images</td><td>Solution to the "Cornerness" function</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\ixyimg2.jpg" width="500px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\hsImg2.jpg"  width="500px"/></td>
+		</tr>
+		<tr><td>3)Neighborhoods used to Threshold Points</td><td>Interest Points -> Max Points in the Neighborhoods</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\NbrhdsOfMaxImg2.jpg" width="500px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\interestPoints\image2\MaxPtsInNbrdimg2.jpg" width="500px"/></td>
+		</tr>
+		</table>
+		
+		<h3>Part 2 - Orientation Gradients of Notre Dame Picture 2 for Descriptor Building</h3>
+		<table id="comvisP2Tbl">
+		<tr><td>0 degrees</td><td>45 degrees</td><td>90 degrees</td><td>135 degrees</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\0degImg2.jpg" width="300px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\45degImg2.jpg"  width="300px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\90degImg2.jpg" width="300px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\135degImg2.jpg"  width="300px"/></td>
+		</tr>
+		<tr><td>180 degrees</td><td>225 degrees</td><td>270 degrees</td><td>315 degrees</td></tr>
+		<tr>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\180degImg2.jpg" width="300px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\225degImg2.jpg" width="300px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\270degImg2.jpg" width="300px"/></td>
+			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\315degImg2.jpg" width="300px"/></td>
+		</tr>
+		</table>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

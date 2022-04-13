@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Graphics | Keyframe Interpolation Through Drawn Targets</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+#graphP5Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+}
+#graphP5Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Keyframe Interpolation Through Drawn Targets</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">       
+        <ul class="clear">
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>         
+        <li class="active"><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li class="active"><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+         <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+            <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+             <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/graph/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+		<li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioGrph.html">Graphics Portfolio</a></li>
+        <li><a href="#">Keyframe Interpolation Through Drawn Targets</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Keyframe Interpolation Through Drawn Targets</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6491 Computer Graphics (Graduate)</td>
+              <td>Jarek Rossignac</td>
+              <td>Fall 2014</td>
+              <td>Java/Processing</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+      <p>This project started as an assignment for the Graduate Graphics course CS6491, and I ended up working on it a 
+      bit beyond the scope of the assignment.  Basically you would draw a stroke on the screen and the moving animated 
+      line would pass through what you drew, with continuity determined by which "mode" you choose to use.</p>
+      <p>The user draws the desired future position(s) of the moving
+edge, and using interpolation, the edge moves to that position over the course of 1 second. If there are no more target keyframes drawn,
+the edge continues its motion along the curve used to interpolate the edge position as defined by the most recent user input.</p>
+<p>Multiple edges can be drawn, and inbetween frames will be displayed showing the edge's future position at some fraction of time
+between any two keyframes. A logarithmic spiral interpolation method is used to animate the edge between keyframes. We
+extended this to also interpolate between keyframes using a Bezier curve and by linearly interpolating the motion between two
+consecutive spiral interpolations using Neville's algorithm.</p>
+<p>The primary interpolation scheme is based on a logarithmic sprial. I first find the angle of rotation between the beginning
+position of the line and the drawn keyframe, as well as the ratio of starting and ending lengths of the line. Then I use these
+quantities, along with one of the endpoints from each of the lines defining the animation, to find a point F, about which both the
+beginning and ending lines of the animation can be said to be rotating around, using the following code, which solves a linear
+system :</p>
+<pre><code>
+pt SP_CTR(float a, float z, pt A, pt C) {
+	float c=cos(a), s=sin(a);
+	float D = sq(c*z-1)+sq(s*z);
+	float ex = c*z*A.x - C.x - s*z*A.y;
+	float ey = c*z*A.y - C.y + s*z*A.x;
+	float x=(ex*(c*z-1) + ey*s*z) / D;
+	float y=(ey*(c*z-1) - ex*s*z) / D;
+	return P(x,y);
+}
+</code></pre>
+where a is the angle, z is the scale difference, and A and C are two points on the arc of the circle which I am trying to find the
+center of. Lastly, the current time position of the edge is derived via the following equation :
+<pre><code>
+	e(t) = F + (sc^t) *(R(e,t*alpha,F) – F)
+</code></pre>
+where t denotes the interpolant, usually varying between 0 and 1, e is the edge, R(a,t,b) means rotate a around b by t radians, F is
+the derived fixed point center, and sc^t means the ratio of the beginning and ending edge lengths, raised to the t power.</p>
+<p>I also use the logarithmic spiral to derive the knots that define the Bezier curve, and then used them to define how I
+wished the line to move. I calculate the locations of the endpoints of the line at t=1/3 and t=2/3 and use them along with the
+beginning and ending edge end points as control points to define a cubic bezier interpolation curve for the animating line. Note that
+the line will often not interpolate to the control points. The equation for this is simple – just linear interpolations of linear
+interpolations of the results of the spiral interpolation.</p>
+<p>Finally, using Neville’s algorithm, I interpolate between two sequential frames of spiral motion to derive a final motion
+that has C1 continuity. By taking the results of two consecutive spiral interpolations over the same time period, I then linearly
+interpolate between those motions to describe the final line motion</p>
+     <p>Below are videos of the interpolation process with various configurations (with links if the videos don't play automatically) : </p>
+     <table id="graphP5Tbl" >
+      <tr><td><a href="../../cvexclips/graph/proj5/graphProj5b.mp4">Spiral Interpolation</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/graph/proj5/graphProj5b.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/graph/proj5/graphProj5c.mp4">Spiral Interpolation Through Keyframes</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/graph/proj5/graphProj5c.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/graph/proj5/graphProj5a.mp4">Intermediate Keyframes via Bezier Interpolation</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/graph/proj5/graphProj5a.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+	</table>
+      
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

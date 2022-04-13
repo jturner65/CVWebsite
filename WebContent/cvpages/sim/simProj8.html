@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Simulation | 3D Mass-Spring Locomotion</title>
+<link href='http://fonts.googleapis.com/css?family=Nunito:300|Crimson+Text|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" title="Default" href="styles/github.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>  
+
+<link rel="stylesheet" href="../highlighting/styles/default.css">
+<script src="../highlighting/highlight.pack.js"></script>
+<style>
+#simP8Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+}
+#simP8Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | 3D Mass-Spring Locomotion</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">       
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li class="active"><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>         
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+        <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+            <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>
+            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+            <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/sim/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="portfolioSim.html">Simulation Portfolio</a></li>
+        <li><a href="#">3D Mass-Spring Locomotion</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>3D Mass-Spring Locomotion</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 7492 Simulation of Biological Systems</td>
+              <td>Greg Turk (Expanded as personal project)</td>              
+              <td>Spring 2015-Summer 2015</td>
+              <td>C++</td>
+              <td>No</td>
+              <td><a href="https://github.com/jturner65/ParticleSim">Github Repo - particle sim</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+<p>For this simulation I took my <a href="simProj3.html">Constrained Particle Sim</a> and added a lot of functionality, including iterative, positional constraints and implicit integrator 
+spring force handling via a conjugate gradient solver.  
+The rest length of a set of springs is modified to displace a mass which then generates rolling motion via frictional contact between particles and a flat collider. </p>
+<p>This project was the final project for the Simulation of Biological Systems class and required a creature to exhibit mass-spring-motivated motion.  I originally focused on building a 
+jelly-fish simulator, with a flock of creatures floating and moving in a fluid simulation, where the body of each creature would cyclically constrict and expand, allowing for motion in a particular 
+direction against the fluid within which it floated.  To accomplish this, I felt a body mesh for the creature would need to be chosen that was as close to spherical as possible, to minimize any 
+directional bias, while having a minimal number of vertices (that I would model as particles - too few and the body would not retain the spherical appearance I desired, while too many might 
+compromise computational speed unacceptably), and these vertices should be as close to equidistant from all their neighbors as possible.  I've been fascinated by the higher-face-count 
+polygons like the icosedron (20-sided) and rhombic triacontehedron (30-sided), especially the latter (with the golden ratio exhibited in each rhombic face making it particularly pleasing),
+ since I played D&D in the early 80's, and still have many examples of each in my old dice bag from back then, and so I thought a rhombic triacontehedron would be a good choice here.</p>
+ <p>Unfortunately the jelly-fish idea had to be scrapped - there were bugs in my simulation of the directional force generation from the body constriction in the fluid simulation causing it to be unstable, 
+ but I did retain the RT as my mass-spring creature, instead making a self-rolling ball (sort of like a simulation of BB-8, the new droid from Star Wars VII, although I was unaware of BB-8 at the time).  
+ The RT "creature body" consisted of the following : </p>
+ <ol>
+ <li>32 Vertices : modelled as particles with unit mass.</li>
+ <li>60 (+30) Edges : modelled as positional constraints (I added 30 more that bisected each face, effectively creating a 60-sided mesh of near-equilateral triangles, for stability).</li>
+ <li>Creature Body : modelled by a particle at the center of the mesh with 100x the mass of any of the mesh particles.</li>
+ <li>32 "Ligaments" : modelled as springs, these suspended the creature's "body" within the RT "shell".</li>
+ <li>Ground : a frictional flat collider that the RT vertex particles would interact with.</li>
+ </ol>  
+<p>The simulation works as follows : when a direction and speed of motion is specified by the user via mouse-drag, the springs holding the body mass decrease in their length tangent to that direction 
+ ("In Front" of the body), while increasing in their length component in the negative tangent direction (i.e. "Behind" the body).  This would maintain the shape of the RT surface,
+ while displacing the central mass in a particular direction and causing the construct to want to roll due to gravity.  The algorithm for making the sphere move while retaining its shape was as follows : </p>
+	  
+<pre><code>%Mass-Spring-based movement
+%shakeVal holds user-entered force - set to 0 on click to initialize
+if (msClicked) { shakeVal.setZero(); }	
+%derive and accumulate all spring-based quantities and forces, including modified lengths from user input.									
+if (msDragged) { addForcesToMassSpringCtrl(scaleInput, msDragged, msDragVal); }
+%apply extant environmental forces to system
+applyForcesToSystem();
+%apply spring forces to system
+applySpringForcesToSystem();
+%check for, and handle, collisions for all particles to see if any hit the ground
+bool colTest = handlePartCldrCollision();			
+if (colTest) {	
+	flags[mass2HasHitGrnd] = true;
+	flags[mass2ChkHasHitGrnd] = false;
+}
+%solver for positional constraints via iterative refinement : move every particle toward equidistant from all its neighbors, repeat 100 times.
+satisfyPosConstraints();							
+%integrate particles in system via implicit method and conjugate gradient solver to get new positions and velocities, and update system.
+solveImpEuler4MassSpring();						
+</code></pre>
+<p>I didn't force the particles in contact with the collider to "stick" to the ground (frictional model is not completely accurate), 
+and I would jump start the motion with a force to all the particles in the direction of the user input, so some sliding is exhibited in this older video, especially when the direction is changed.  I have since
+repaired this for more realistic motion. </p>
+     <table id="simP8Tbl" >
+      <tr><td><a href="../../cvexclips/sim/proj8/simProj8a.mp4">Rolling Mass-spring Rhombic Triacontehedron</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj8/simProj8a.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+  	</table>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

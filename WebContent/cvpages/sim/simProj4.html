@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Simulation | Eroding Fractal & Procedural Terrains Using Heightfield Fluids</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+#simP4Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+}
+#simP4Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Eroding Fractal Terrain Using Heightfield Fluids</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">       
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li class="active"><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>         
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li><a href="../comvis/comvisProj1.html">Hybrid Images</a></li>         </ul>
+        </li>
+        <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+            <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+            <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/sim/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="portfolioSim.html">Simulation Portfolio</a></li>
+        <li><a href="#">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Eroding Fractal & Procedural Terrains Using Heightfield Fluids</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Research Project</td>
+              <td>Greg Turk</td> 
+              <td>Summer 2012-Spring 2013</td>
+              <td>Java/Processing</td>
+              <td>No</td>
+              <td><a href="https://github.com/jturner65/HeightFieldFluidErodesFractalTerrain">Github Repo</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+      <p>This was my first undergraduate research project.  Initially based on Ken Musgrave's terrain generation and 
+      erosion using a simple first order fluid model, I implemented Square Square subdivision to generate the fractal terrain (Gavin Miller, 1986) 
+      and then moved to using a 2nd order "Pipes" model of fluid transport built from the shallow water equations.  I also ended up building a bunch of
+      procedurally generated meshes, including infinite winding rivers, meshes with non-erodable "boulders", and full UI control and visualization of all simulation parameters.</p>
+      <p>I had a few creative solutions to keep the process "water tight/sediment preserving" (no loss/gains in eroded sediment or water transport), which most of the extant literature at the time
+      didn't really seem to care about, and I also had a few creative solutions to get better results, including a method that allowed for lateral erosion (mass wasting) of river banks (dry terrain 
+      adjacent to nodes of the fluid heightfield) and having sediment transport happen during the fluid transport stage, speeding up computation. </p>
+      <p>The UI controls were something I built for this simulation that I have since modified to use in all my Java simulation and graphics projects.</p>
+      <p>I've always felt that this simulation would make a neat paintbrush-type tool - erode your mesh! Despite that it's based on Height-field fluid, the "terrain" doesn't have to be flat for it to work. 
+       I've just not had the time to migrate it to MEL/Maya.</p>
+       
+       <p>I revisited this project in 2014 and changed it to integrate with Midpoint method instead of Explicit Euler, and I also added an external call to a matlab script I wrote to conduct finite element
+       analysis to determine the strains of the surface due to the forces of the fluids.  This revealed another mechanism for determining the amount of terrain to errode.</p>
+       
+     <p>Below are some videos of the system in action (with links if the videos don't play automatically) : </p>
+     <table id="simP4Tbl" >
+      <tr><td><a href="../../cvexclips/sim/proj4/simProj4a.mp4">Fractal Terrain Subdivision (Square-square algorithm)</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj4/simProj4a.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/sim/proj4/simProj4b.mp4">Erosion on infinite river around non-eroding boulders.  I added the boats to show the motion of the fluid - they are rigid bodies with mass and displacement, 
+      and so are bouyant.  Their motion is governed by the fluid forces around them, while their orientation is determined by the fluid velocity at their location.</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj4/simProj4b.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/sim/proj4/simProj4c.mp4">Erosion over a wall - the red mesh denotes the sediment motion.</a></td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj4/simProj4c.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/sim/proj4/simProj4d.mp4">Erosion (Mass Wasting) of a cliff - again, the red mesh denotes the sediment motion.</a>  Note how it seems to lead the fluid motion - this is because the sediment transport 
+      capability of the fluid is determined by the fluid velocity.  The fastest moving fluid, as can be seen by the velocity arrows, is the fluid in the rising wake of the wave, and so this fluid carries the most sediment.</td></tr>
+      <tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj4/simProj4d.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+	</table>
+       
+      </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

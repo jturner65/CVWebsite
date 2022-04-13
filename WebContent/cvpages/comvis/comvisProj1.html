@@ -1,0 +1,389 @@
+<html>
+<head>
+<title>John Turner | Computer Vision | Hybrid Images using FFT</title>
+<link href='http://fonts.googleapis.com/css?family=Nunito:300|Crimson+Text|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" title="Default" href="styles/github.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>  
+
+<link rel="stylesheet" href="../highlighting/styles/default.css">
+<script src="../highlighting/highlight.pack.js"></script>
+<style>
+#comvisP1Tbl{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+
+}
+#comvisP1Tbl img{
+        width:100%; height:auto;
+}
+</style>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="../../index.html">John Turner | Hybrid Images using FFT</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+      	<li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">      
+        <li><a class="drop" href="../charanim/portfolioCharAnim.html">Character Control</a>
+          <ul>
+            <li><a href="../charanim/charanimProj6.html">Online Control Using Particle Belief Propagation</a></li>
+            <li><a href="../charanim/charanimProj5.html">Benchmark and Optimize Biped Controllers Using Biomech Data and CMA</a></li>
+            <li><a href="../charanim/charanimProj4.html">SIMBICON Implementation</a></li>
+            <li><a href="../charanim/charanimProj3.html">Maintain Biped Balance Through Inverted Pendulum Model</a></li>
+            <li><a href="../charanim/charanimProj2.html">Kinect Library</a></li>
+            <li><a href="../charanim/charanimProj1.html">IK Solver</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../sim/portfolioSim.html">Animation/Sim</a>
+          <ul>
+            <li><a href="../sim/simProj9.html">Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</a></li>
+            <li><a href="../sim/simProj8.html">3D Mass-Spring Locomotion</a></li>
+            <li><a href="../sim/simProj7.html">2D/3D Diffusion Limited Aggregation</a></li>
+            <li><a href="../sim/simProj6.html">GLSL/Marching Cubes Reaction Diffusion</a></li>
+            <li><a href="../sim/simProj5.html">3D Rigid Body Flocking and Roshambo Predator-Prey System</a></li>
+            <li><a href="../sim/simProj4.html">Eroding Fractal & Procedural Terrains Using Heightfield Fluids</a></li>
+            <li><a href="../sim/simProj3.html">Constrained Particle Sim (Baraff and Witkin)</a></li>
+            <li><a href="../sim/simProj2.html">Stam GDC Fluid Simulation</a></li>
+            <li><a href="../sim/simProj1.html">Game Of Life</a></li>   
+          </ul>
+        </li>          
+        <li><a class="drop" href="../graph/portfolioGrph.html">Graphics</a>
+          <ul>
+            <li><a href="../graph/graphProj8.html">Torroidal Sweep of Drawn Shape</a></li>
+            <li><a href="../graph/graphProj7.html">Extrude Polygon and Generate 3D Corner Table</a></li>
+            <li><a href="../graph/graphProj6.html">Generate Polygon and Parse in 4 equal areas</a></li>
+            <li><a href="../graph/graphProj5.html">Keyframe Interpolation Through Drawn Targets</a></li>
+            <li><a href="../graph/graphProj4.html">Interpolating Keyframe Animation (MEL scripts in Maya)</a></li>
+            <li><a href="../graph/graphProj3.html">Subdivision Surfaces</a></li>
+            <li><a href="../graph/graphProj2.html">Raytracer</a></li>
+            <li><a href="../graph/graphProj1.html">Animated Snowmen (Snow Globe 1)</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="drop" href="../comvis/portfolioComVis.html">Computer Vision</a>
+          <ul>
+            <li><a href="../comvis/comvisProj7.html">Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader</a></li>
+            <li><a href="../comvis/comvisProj6.html">Convolution NN for Object Recognition</a></li>
+            <li><a href="../comvis/comvisProj5.html">Face Detection with a Sliding Window</a></li>
+            <li><a href="../comvis/comvisProj4.html">Scene Recognition with Bag of Words and Linear and Nonlinear SVM</a></li>
+            <li><a href="../comvis/comvisProj3.html">Camera Calibration and Fundamental Matrix Estimation with RANSAC</a></li>
+            <li><a href="../comvis/comvisProj2.html">Local Feature Matching with Harris Corners and SIFT Features</a></li>
+            <li class="active"><a href="../comvis/comvisProj1.html">Hybrid Images using FFT</a></li>         </ul>
+        </li>
+         <li><a class="drop" href="../games/portfolioGames.html">Games And Music</a>
+          <ul>
+            <li><a href="../games/gameProj4.html">Sequencer and JCuda Music Visualizer</a></li>
+            <li><a href="../games/gameProj3.html">Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings</a></li>
+            <li><a href="../games/gameProj2.html">MechArchon Game</a></li>
+            <li><a href="../games/gameProj1.html">Demo Proposal of MechArchon Game</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../ml/portfolioML.html">AI/ML</a>
+          <ul>
+            <li><a href="../ml/mlProj7.html">Gaussian Process Regression</a></li>
+            <li><a href="../ml/mlProj6.html">Kalman Filter and EKF based Simulated Helicopter Control</a></li>
+            <li><a href="../ml/mlProj5.html">Particle Filter-Based Robot Localization</a></li>
+            <li><a href="../ml/mlProj4.html">Randomized Optimization</a></li>
+            <li><a href="../ml/mlProj3.html">Reinforcement Learning and MDP's</a></li>
+            
+            <li><a href="../ml/mlProj2.html">Classification, Regression and Dimensionality Reduction</a></li>
+            <li><a href="../ml/mlProj1.html">Pacman AI Projects</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="../nads/portfolioNADS.html">Data Science</a>
+          <ul>
+            <li><a href="../nads/nadsProj6.html">Modeling Look-alikes via Self-organizing Maps</a></li>
+            <li><a href="../nads/nadsProj5.html">Behavior Prediction via Single Hidden Layer Neural Net</a></li>
+            <li><a href="../nads/nadsProj4.html">Moments-Based Revenue/Cost Analysis of Online Conversions</a></li>
+            <li><a href="../nads/nadsProj3.html">Media Mix Modeling Using Nonlinear Regression</a></li>
+            <li><a href="../nads/nadsProj2.html">Quasi-Newton Method Solvers</a></li>
+            <li><a href="../nads/nadsProj1.html">Newtonian Method Based Solvers</a></li>          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/comvis/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioCharAnim.html">Computer Vision</a></li>
+        <li><a href="#">Hybrid Images using FFT</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>Hybrid Images using FFT</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 6476 Computer Vision</td>
+              <td>James Hays</td>
+              <td>Fall 2015</td>
+              <td>MATLAB</td>
+              <td>No</td>
+              <td>Code N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+		
+		<div style="float: right; padding: 20px">
+		<img src="../../cvimages/comvis/comvisProj1/images/Hybrid_ImgNum_5.jpg" />
+		<p style="font-size: 14px">This image will haunt me the rest of my life.</p>
+		</div>
+		
+		<p>Highlights of My Implementation for Project 1</p>
+		
+		<ol>
+		<li>Dual filter cuttoffs (for low frequency and high frequency image)(Possible EC?)</li>
+		<li>Mirrored Boundaries</li>
+		<li>3 algorithmic implementations - naive, fft(matlab's implementation), fft(my own implementation of fft) (Possible EC?)</li>
+		</ol>
+		
+		<p>A hybrid image is one in which two different, but similar, images are combined in such a way that one image is more recognizable from a distance while another is more obvious up close.
+		This occurs because the human mind classifies images based, in large part, on the detail that is visible.  When an image is blurry and lacks crisp detail, its subject can be hard 
+		to determine, while very little of an image need be present for the image to be recognizable if what is present is the high frequency content that is perceived as detailed edges and textures.  
+		Of course, an image that is blurry when viewed up close will seem more clear, or at least not seem as blurry, when seen from a distance. This is because detail becomes less perceptible over
+		distances.  These observations are behind the concept of a hybrid image - a blurry image up close ends up being less recognizable and easily overshadowed by the detail from a similar 
+		image overlayed on it.  Once this image is made small, or distant from the observer, the added detail is lost and the original, blurry image, is more recognizable.</p>
+		<p>The hybrid effect is accomplished by filtering two images with a gaussian blur, removing the high frequency from both of them.  The image that is intended to be used as a high frequency
+		detail template is made by subtracting the blurred image from the original, leaving behind the components that had been filtered out.  The two images are then overlayed and the result is the hybid image.</p>
+		<h3>Implementation Details</h3>
+		<p>For my implementation of this project, I used the included MATLAB stub code.</p> 
+		<div style="float: right; padding: 10px">
+		<img src="../../cvimages/comvis/comvisProj1/images/mirroredBounds.jpg" width="100px" height="100px"/>
+		<p style="font-size: 14px">The mirrored boundaries of a single color channel of dog.bmp</p>
+		</div>
+		<p>The primary components of this project are each of the source images, the filter kernel to be used to blur them, and the algorithm by which the filter is applied to the image to accomplish the blur.  
+		The filter used is a gaussian filter of variable STD, which describes the width of the filter.  I chose to implement separate filters for each of the source images, to allow for different
+		filtering thresholds for the high frequency and low frequency components of the resultant hybrid image.  I accomplished this by sweeping through 1 to 10 by integers for each filter's STD element, 
+		and choosing the most visually appealing result for each.  The values I used on the 5 provided images are listed below with the images themselves. </p>
+		
+		<p>I chose to mirror the boundaries of the image so that there would be no artifacts from the filtering process.  This was not difficult, 
+		particularly with MATLAB's powerful, built-in matrix handling.  The code I wrote to accomplish this is below :  </p>
+		<pre><code>%Boundary Mirroring
+		    %copy base image into the middle of pre-configured expanded image destination
+		    %imgChn is the pre-allocated result matrix
+		    %imgBaseChn is a matrix of intensity values of a single channel of the original image
+		    imgChn(stRowsBnds:endRowsBnds,stColsBnds:endColsBnds) = imgBaseChn(:,:);
+		    %flip first cols of original image for out-of bounds image       
+		    imgChn(stRowsBnds:endRowsBnds,1:imgBnds(2)) = fliplr(imgBaseChn(:,1:imgBnds(2)));   
+		    %flip last cols of original image for out of bounds image
+		    imgChn(stRowsBnds:endRowsBnds,(endColsBnds+1):end) = fliplr(imgBaseChn(:,(end-imgBnds(2)+1):end));
+		    %now dupe upper and lower rows, which will also copy into corners
+		    imgChn(1:imgBnds(1),:) = flipud(imgChn(stRowsBnds:(stRowsBnds+imgBnds(1)-1),:));
+		    imgChn((endRowsBnds+1):end,:) = flipud(imgChn((endRowsBnds-imgBnds(1)+1):endRowsBnds,:));
+		</code></pre>
+		<h3>Algorithms</h3>
+		<p>To filter an image involves convolving a symmetrix odd dimensional filter matrix with a matrix representation of a single color channel of an image.  The baseline, naive implementation of this 
+		is accomplished via nested for loops, where, for every pixel of the image, the filter values are multiplied by the image intensity values surrounding a single pixel via a dot product, and the 
+		scalar result of this dot product is used to replace the original pixel value.  This is repeated for each color channel, the extra boundary reflection component of the image is cropped, and the
+		resultant blurred image is returned.</p>
+		<pre><code>%naive filter Implementation
+		    for rowIdx = 1:imageWidth
+		        resRowIdx = rowIdx+imgRowBoundarySize;
+		        endRowIdx = rowIdx + originalRowImageSize-1;
+		        for colIdx = 1:imgBnds(8)
+		            resColIdx = colIdx+imgColBoundarySize;
+		            endColIdx = colIdx + originalColImageSize-1;
+		            %resBlock = imgChn(rowIdx:endRowIdx, colIdx:endColIdx) .* filter;
+		            resPxl = sum(sum(imgChn(rowIdx:endRowIdx, colIdx:endColIdx) .* filter));
+		            resImg(resRowIdx,resColIdx) = resPxl;
+		        end
+		    end
+		</code></pre>
+		<p>The naive implementation can be fairly slow - it's an O(N^3) algorithm, similar to multiplying two polynomials together; however, similar to polynomial multiplication, the use of the Fast
+		Fourier Transform can convert this problem to linear time by using a simple fact - convolution in the "time" domain is the same as multiplication in the frequency domain. </p>
+		<p>This can be illustrated with the polynomial multiplication example.  Imagine that each of the filter values in the filter matrix were coefficients of a polynomial of degree n, where n is 
+		the number of pixels in the source image, and the intensity value of each of the pixels in the source image is also a coefficient of another polynomial of same degree.  What we are doing when we
+		filter the image is effectively multiplying these two polynomials together - that's what convolution is. </p>
+		<table id="comvisP1Tbl">
+		<tr><td>
+		<div style="float: right; padding: 20px">
+		<img src="../../cvimages/comvis/comvisProj1/images/filterInFreqDomain.jpg" width="400px" height="300px"/>
+		<p style="font-size: 14px">A Gaussian Filter in the Frequency Domain is ... still a Gaussian.</p>
+		</div>
+		</td></tr></table>
+		<p> The cool thing about polynomials, particularly for this application, is that you can uniquely represent the line described by a polynomial of degree n by using n+1 values for the 
+		polynomial - two points describe a line, which is a first order polynomial.  Three will uniquely describe a parabola, and so on.  Why do we want these values?  Because you can find the result of
+		the convolution process by just multiplying these values together individually, instead of the nested-loop matrix multiplications.  Finding these unique values is what the FFT does.</p>
+		<p>To use the FFT, the filter needs to be made as large as the image (padded with 0 values), and (for some algorithms) both filter and image need to be padded with 0's to the next largest power of two.
+		Then, both filter and image are passed through the FFT algorithm, where they are transformed into the frequency domain.  They are then multiplied together, and then the inverse transformation is applied
+		to translate the resultant image back from the frequency domain to the "time" domain to reveal the resultant image.  The speed of this process is very fast, and using the MATLAB optimized implementations 
+		of fft2 and ifft2, the process is finished about as fast as the built in implementation of imfilter.  The code accomplishing this can be seen below (using built in matlab fft2 and ifft2 functions).</p>
+		<pre><code>%fft base
+		    tmpFFTImg = fft2(double(imgChn));
+		    fftFilter = fft2(filter);
+		    %multiply fft values
+		    fftImgProd = tmpFFTImg.*fftFilter;    
+		    %inverse fft to get result image
+		    resImgFFT = ifft2(fftImgProd);
+		</code></pre>
+		<p>Of course, I felt that using the built in version of fft was sorta cheating, so I coded my own.  I based my implementation on one I wrote a while ago using an algorithm from Numerical Recipes 
+		In C, a classic book of algorithm implementations.  However, the code was not designed for a language with the built in vectorization capabilities of MATLAB, and so I had to re-design it from scratch to
+		get it to work reasonably in MATLAB, and I learned a few things on the way.  For one, the bitshift function in matlab is about 100x slower than just multiplying or divding by 2, which is counter-intuitive.
+		My original fft implementation used loops to derive indexes during the computation, where large, precomputed, vectors of indexes would better serve in MATLAB.  This implementation also was originally designed
+		for an environment with no native sense of complex numbers, so I had to store the real and imaginary parts of each value in separate locations - I used the odd idxes for the real components and the even idxs for
+		the imaginary ones.  Multiplying the values together was also interesting - I used an algorithm originally discovered by Gauss to multiply two Complex numbers using only 3 multiplications (instead of the usual 
+		4 one would expect if using the FOIL method.  </p>
+		<pre><code>%Gaussian multiplication of two complex numbers (a + bi) * (c + di)
+			x = a*c
+			y = b*d
+			z = (a+b)*(c+d)
+			realPart = x - y
+			imagPart = z - x - y;
+		</code></pre>
+		<table id="comvisP1Tbl">
+		<tr><td>
+		<div style="float: right; padding: 20px">
+		<img src="../../cvimages/comvis/comvisProj1/images/baseImgInFreqDomain.jpg" width="400px" height="300px"/>
+		<p style="font-size: 12px">The blue channel of bird.bmp in the frequency domain.
+		<br>Note the bias in the yellow values toward an upper-left to lower-right diagonal. .
+		<br>This infers a predominant orientation axis in the source image.</p>
+		</div>
+		</td></tr></table>
+		<p>My implementation of the Fast Fourier Transform wasn't as fast as MATLAB's native implementation, but it was still faster than the naive implementation of the convolution process.  
+		Here is the main code to process the fft. My actual implementations are in two functions in my_imfilter.m : my_fft, on line 304, which handles the conversion to and from the frequency domain, and 
+		appropriately handles real-only or real-and-complex vectors, and baseFFTCalc, on line 260, which does the actual fft computation (which is very similar to a Lagrange polynomial calculation, with a 
+		Vandermonde-like matrix of the nth complex roots of unity, where n is the next power of 2 larger than the image pixel count multiplying the individual intensity values of either the image or the filter.)
+		<pre><code>%my fft base
+			tmpFFTImg = my_fft(imgChn,1,imgBnds,fftConsts);
+		    fftFilter = my_fft(filter,1,imgBnds,fftConsts);     
+		    %multiply fft values - arrays are set to be:
+		    %   odd idx -> real part
+		    %   even idx -> img part
+		    %product of 2 imaginary #'s - use only 3 mults for speed 
+		    %(a + bi) * (c + di) = ac - bd + (bc+ad)i
+		    ac = (tmpFFTImg(1:2:end).*fftFilter(1:2:end));
+		    bd = (tmpFFTImg(2:2:end).*fftFilter(2:2:end));
+		    %(bc+ad) = (a+b)(c+d) - ac - bd
+		    ab_cd = (tmpFFTImg(1:2:end) + tmpFFTImg(2:2:end)) .* (fftFilter(1:2:end) + fftFilter(2:2:end));
+		    fftImgProd(1:2:end) = ac - bd;    
+		    fftImgProd(2:2:end) = ab_cd - ac - bd;
+		    %inverse fft to get result image
+		    resImgFFT = my_fft(fftImgProd,-1,imgBnds,fftConsts);
+		</code></pre>
+		
+		<div style="clear:both">
+		<h3>Results</h3>
+		<p>My results are shown below, and some of them are more convincing than others.  I think the Cat-Dog hybrid is the best, and was easiest to fit good filter STD coefficients to, and the Fish-Submarine was also 
+		pretty easy to get some convincing results with.  The Plane-Bird hybrid was more difficult to find good STD values for, as was the Bicycle-Motorcycle, although I think the values I picked worked fairly well.
+		  The Marilyn Monroe / Albert Einstein hybrid is just creepy.  The values I used for each image are listed below with the images.</p>
+		
+		<h3>Blurred (low frequency) Images</h3>
+		<table id="comvisP1Tbl">
+			<tr><td>Blurry Dog : Dog Filter STD : 5</td><td>Blurry Birdie : Tweety Filter STD : 6 </td></tr>
+			<tr>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/LowFreq_ImgNum_1.jpg" width="48%"/></td>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/LowFreq_ImgNum_2.jpg" width="48%"/></td>
+			</tr>
+			<tr><td>Blurry Sub : Sub Filter STD : 5 </td><td>Blurry Motorcycle : Motorcycle Filter STD : 8 </td></tr>
+			<tr>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/LowFreq_ImgNum_3.jpg" width="48%"/></td>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/LowFreq_ImgNum_4.jpg" width="48%"/></td>
+			</tr>
+			<tr><td>Blurry Albert : Albert Filter STD : 3</td><td></td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/LowFreq_ImgNum_5.jpg" width="48%"/></td><td></td></tr>
+		</table>
+		
+		<h3>Edge (high frequency) Images</h3>
+		<table id="comvisP1Tbl">
+			<tr><td>Cat Ghost : Kittie Filter STD : 8</td><td>Plane Ghost : Plane Filter STD : 5</td></tr>
+			<tr>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/HiFreq_ImgNum_1.jpg" width="48%"/></td>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/HiFreq_ImgNum_2.jpg" width="48%"/></td>
+			</tr>
+			<tr><td>Fish Ghost : Fish Filter STD : 5 </td><td>Bike Ghost : Bike Filter STD : 4 </td></tr>
+			<tr>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/HiFreq_ImgNum_3.jpg" width="48%"/></td>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/HiFreq_ImgNum_4.jpg" width="48%"/></td>
+			</tr>
+			<tr><td>Marilyn Ghost : Marilyn Filter STD : 5</td><td></td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/HiFreq_ImgNum_5.jpg" width="48%"/></td><td></td></tr>
+		</table>
+		
+		<h3>Hybrid Images</h3>
+		<table id="comvisP1Tbl">
+			<tr><td>CatDog : Dog Filter STD : 5 | Cat Filter STD : 8</td><td>PlaneBird : Tweety Filter STD : 6 | Plane Filter STD : 5</td></tr>
+			<tr>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/Hybrid_ImgNum_1.jpg" width="48%"/></td>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/Hybrid_ImgNum_2.jpg" width="48%"/></td>
+			</tr>
+			<tr><td>FishMarine : Sub Filter STD : 5 | Nemo Filter STD : 5</td><td>BiMotorCyle : Motorcycle Filter STD : 8 | Bicycle Filter STD : 4</td></tr>
+			<tr>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/Hybrid_ImgNum_3.jpg" width="48%"/></td>
+				<td><img src="../../cvimages/comvis/comvisProj1/images/Hybrid_ImgNum_4.jpg" width="48%"/></td>
+			</tr>
+			<tr><td>Marilyn Einstein, PhD : Albert Filter STD : 3 | Blondie Filter STD : 5</td><td></td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/Hybrid_ImgNum_5.jpg" width="48%"/></td><td></td></tr>
+		</table>
+		
+		<h3>Scaled (Visualizaton) Hybrid Images</h3>
+		<table id="comvisP1Tbl">
+			<tr><td>CatDog : Dog Filter STD : 5 | Cat Filter STD : 8</td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/HybridScales_ImgNum_1.jpg" width="96%"/></td></tr>
+			<tr><td>PlaneBird : Tweety Filter STD : 6 | Plane Filter STD : 5</td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/HybridScales_ImgNum_2.jpg" width="96%"/></td></tr>
+			<tr><td>FishMarine : Sub Filter STD : 5 | Nemo Filter STD : 5</td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/HybridScales_ImgNum_3.jpg" width="96%"/></td></tr>
+			<tr><td>BiMotorCyle : Motorcycle Filter STD : 8 | Bicycle Filter STD : 4</td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/HybridScales_ImgNum_4.jpg" width="96%"/></td></tr>
+			<tr><td>Marilyn Einstein, PhD : Albert Filter STD : 3 | Blondie Filter STD : 5</td></tr>
+			<tr><td><img src="../../cvimages/comvis/comvisProj1/images/HybridScales_ImgNum_5.jpg" width="96%"/></td></tr>
+		</table>
+		
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

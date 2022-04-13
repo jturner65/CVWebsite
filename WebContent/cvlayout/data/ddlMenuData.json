@@ -1,0 +1,106 @@
+{
+   "page_root": "cvpages",
+   "parent_tags": [
+      {
+         "subdir": "charanim",
+         "title": "Character Control",
+         "portfolio": "portfolioCharAnim.html",
+         "elements": [
+            "IK Solver",
+            "Kinect Library",
+            "Maintain Biped Balance Through Inverted Pendulum Model",
+            "SIMBICON Implementation",
+            "Benchmark and Optimize Biped Controllers Using Biomech Data and CMA",
+            "Online Control Using Particle Belief Propagation",
+            "Interactive Assistive Control Via Baseline State Optimization."
+         ]
+      },
+      {
+         "subdir": "sim",
+         "title": "Animation/Sim",
+         "portfolio": "portfolioSim.html",
+         "elements": [
+            "Game Of Life",
+            "Stam GDC Fluid Simulation",
+            "Constrained Particle Sim (Baraff and Witkin)",
+            "Eroding Fractal & Procedural Terrains Using Heightfield Fluids",
+            "3D Rigid Body Flocking and Roshambo Predator-Prey System",
+            "GLSL/Marching Cubes Reaction Diffusion",
+            "2D/3D Diffusion Limited Aggregation",
+            "3D Mass-Spring Locomotion",
+            "Snow Globe 2 (3D Fluid and Particle Snow in a Globe)",
+            "Discrete Event Simulation",
+            "CUDA-based Material Point Method Snowballs"
+         ]
+      },
+      {
+         "subdir": "graph",
+         "title": "Graphics",
+         "portfolio": "portfolioGrph.html",
+         "elements": [
+            "Animated Snowmen (Snow Globe 1)",
+            "Raytracer",
+            "Subdivision Surfaces",
+            "Interpolating Keyframe Animation (MEL scripts in Maya)",
+            "Keyframe Interpolation Through Drawn Targets",
+            "Generate Polygon and Parse in 4 equal areas",
+            "Extrude Polygon and Generate 3D Corner Table",
+            "Torroidal Sweep of Drawn Shape"
+         ]
+      },
+      {
+         "subdir": "comvis",
+         "title": "Computer Vision",
+         "portfolio": "portfolioComVis.html",
+         "elements": [
+            "Hybrid Images",
+            "Local Feature Matching with Harris Corners and SIFT Features",
+            "Camera Calibration and Fundamental Matrix Estimation with RANSAC",
+            "Scene Recognition with Bag of Words and Linear and Nonlinear SVM",
+            "Face Detection with a Sliding Window",
+            "Convolution NN for Object Recognition",
+            "Face-Audio-Caption dataset, SOM of data, and LSTM-based lipreader"
+         ]
+      },
+      {
+         "subdir": "games",
+         "title": "Games And Music",
+         "portfolio": "portfolioGames.html",
+         "elements": [
+            "Demo Proposal of MechArchon Game",
+            "MechArchon Game",
+            "Demo Man - Destroy Procedurally Generated Rigid Body-based Buildings",
+            "Sequencer and JCuda Music Visualizer"
+         ]
+      },
+      {
+         "subdir": "ml",
+         "title": "AI/ML",
+         "portfolio": "portfolioML.html",
+         "elements": [
+            "Pacman AI Projects",
+            "Classification, Regression and Dimensionality Reduction",
+            "Reinforcement Learning and MDP's",
+            "Randomized Optimization",
+            "Particle Filter-Based Robot Localization",
+            "Kalman Filter and EKF based Simulated Helicopter Control",
+            "Gaussian Process Regression"
+         ]
+      },
+      {
+         "subdir": "nads",
+         "title": "Data Science",
+         "portfolio": "portfolioNADS.html",
+         "elements": [
+            "Newtonian Method Based Solvers",
+            "Quasi-Newton Method Solvers",
+            "Media Mix Modeling Using Nonlinear Regression",
+            "Media Mix Modeling Using Nonlinear Regression",
+            "Moments-Based Revenue/Cost Analysis of Online Conversions",
+            "Behavior Prediction via Single Hidden Layer Neural Net",
+            "Behavior Prediction via Single Hidden Layer Neural Net",
+            "Modeling Look-alikes via Self-organizing Maps"
+         ]
+      }
+   ]
+}

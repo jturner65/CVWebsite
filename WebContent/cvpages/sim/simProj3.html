@@ -195,32 +195,32 @@ Licence URI: http://www.os-templates.com/template-terms
     
      <p>Below are some videos of the particle sim in action (with links if the videos don't play automatically) : </p>
      <table id="simP3Tbl" >
-      	<tr><td><a href="../../cvexclips/sim/proj3/simProj3a.mp4">Comparison of Integrators in Freefall Sim.</a> <p>These sets of falling particles are intended to illustrate the error inherent in the various approximation-based integrators that I implemented.  
+      	<tr><td><a href="../../cvexclips/sim/proj03/simProj3a.mp4">Comparison of Integrators in Freefall Sim.</a> <p>These sets of falling particles are intended to illustrate the error inherent in the various approximation-based integrators that I implemented.  
       		The first particle on the left is solving the solution analytically (freefall with V0 = 0 and constant gravitational acceleration) and therefore serves as a ground truth.  
       		The integrators used for each of the subsequent particles are : Explicit(Forward) Euler, Midpoint Method, RK3, RK4, Implicity Euler, Trapezoidal Rule, Verlet, Generalized RK4.</p> 
       		<p>A few interesting observations :</p><ol><li>At the end of the clip I add a force to all the particles (except the ground truth), by dragging from left to right across the screen. </li> 
       		<li>The RK3, RK4 and Generalized RK4 are all effectively the same in this simulation, since their errors are all of a higher order (in power of timestep) than the function describing the motion. </li>     		
       		<li>Since the Verlet integrator I implemented doesn't consider the velocity at each time step, and since I handle collisions with planar colliders by reflecting the velocity vector of the particle across the normal of the collider 
       		(scaled by some constant (0,1] representing collider elasticity), the collision is not handled correctly and the particle falls through the ground.</li></ol> </p></td></tr>
-      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj3/simProj3a.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
-      	<tr><td><a href="../../cvexclips/sim/proj3/simProj3b.mp4">Comparison of Integrators in a constrained system.</a>  <p>A compensating force is derived to keep the particles following the circular constraint path. The ground truth implementation only solves for gravitational force and so does not follow the circular constraint, but 
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj03/simProj3a.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      	<tr><td><a href="../../cvexclips/sim/proj03/simProj3b.mp4">Comparison of Integrators in a constrained system.</a>  <p>A compensating force is derived to keep the particles following the circular constraint path. The ground truth implementation only solves for gravitational force and so does not follow the circular constraint, but 
       		otherwise the integrators are the same as those listed above, from top to bottom, Left Column : Ground Truth, Explicit(Forward) Euler, Midpoint Method; Middle Column : RK3, RK4, Implicity Euler; Right Column : Trapezoidal Rule, Verlet, Generalized RK4.</p>
       		<p>Note the compounding error in the forward methods (Forward Euler, Midpoint Method) causing them to explode.</p></td></tr>
-      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj3/simProj3b.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
-     	<tr><td><a href="../../cvexclips/sim/proj3/simProj3c.mp4">Circular Constrained Particle.</a> <p>Note the particles being added, as well as both a fixed-center 
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj03/simProj3b.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+     	<tr><td><a href="../../cvexclips/sim/proj03/simProj3c.mp4">Circular Constrained Particle.</a> <p>Note the particles being added, as well as both a fixed-center 
      		constraint and a particle-to-particle constraint, via user input. This sim uses an RK4 integrator on all particles. </p></td></tr>
-      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj3/simProj3c.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
-     	<tr><td><a href="../../cvexclips/sim/proj3/simProj3d.mp4">Newton's Cradle.</a> <p>Again particles and constraints are added when the sim is paused (the jump in the middle of the clip is 
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj03/simProj3c.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+     	<tr><td><a href="../../cvexclips/sim/proj03/simProj3d.mp4">Newton's Cradle.</a> <p>Again particles and constraints are added when the sim is paused (the jump in the middle of the clip is 
      		due splicing two screen caps with a few seconds dropped in the middle).</p> </td></tr>
-      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj3/simProj3d.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
-   		<tr><td><a href="../../cvexclips/sim/proj3/simProj3e.mp4">"Roller Coaster"</a><p>With this simulation, I have the various particles possibly jump constraints where the constraint paths touch, based on the 
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj03/simProj3d.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+   		<tr><td><a href="../../cvexclips/sim/proj03/simProj3e.mp4">"Roller Coaster"</a><p>With this simulation, I have the various particles possibly jump constraints where the constraint paths touch, based on the 
    			direction of the applied force on the particle when it reaches the contact point.  As the clip runs I apply various forces to the system via mouse-drags, and particles can be seen to jump between various constraints
    			accordingly. </p> </td></tr>
-      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj3/simProj3e.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
-   		<tr><td><a href="../../cvexclips/sim/proj3/simProj3f.mp4">"Seaweed" Sim</a><p>In this sim, each vertical construct consists of particles and constraints between them to maintain their distance.  
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj03/simProj3e.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+   		<tr><td><a href="../../cvexclips/sim/proj03/simProj3f.mp4">"Seaweed" Sim</a><p>In this sim, each vertical construct consists of particles and constraints between them to maintain their distance.  
    		Furthermore, "torques" are applied at each particle to attempt to keep the next particle directly above it (this started as an inverted pendulum experiment).  Lastly, I put a 3D Euler-grid fluid in this sim, and instead of the 
    		click-drag input modifying the force on the particles directly, it modifies the force in the fluid, which in turn applies forces to each particle.  </p> </td></tr>
-      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj3/simProj3f.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj03/simProj3f.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
 	</table>
 
     </div>

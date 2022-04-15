@@ -11,16 +11,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <title>John Turner | Simulation | Constrained Particle Sim (Baraff and Witkin)</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<style>
-#simP3Tbl{
-        width:100%;
-        border-bottom:none;
-        border-left:solid 1px;
-}
-#simP3Tbl img{
-        width:100%; height:auto;
-}
-</style>
 <link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
@@ -194,7 +184,7 @@ Licence URI: http://www.os-templates.com/template-terms
       environmental fluid, if the particular sim window has such a fluid.  This is also demonstrated below.</p> 
     
      <p>Below are some videos of the particle sim in action (with links if the videos don't play automatically) : </p>
-     <table id="simP3Tbl" >
+	<table class="project_table" >
       	<tr><td><a href="../../cvexclips/sim/proj03/simProj3a.mp4">Comparison of Integrators in Freefall Sim.</a> <p>These sets of falling particles are intended to illustrate the error inherent in the various approximation-based integrators that I implemented.  
       		The first particle on the left is solving the solution analytically (freefall with V0 = 0 and constant gravitational acceleration) and therefore serves as a ground truth.  
       		The integrators used for each of the subsequent particles are : Explicit(Forward) Euler, Midpoint Method, RK3, RK4, Implicity Euler, Trapezoidal Rule, Verlet, Generalized RK4.</p> 

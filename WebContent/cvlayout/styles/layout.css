@@ -260,6 +260,17 @@ tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{
 tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
 table a, #comments a{background-color:inherit;}
 
+/* JT Styles
+--------------------------------------------------------------------------------------------------------------- */
+.project_table{
+        width:100%;
+        border-bottom:none;
+        border-left:solid 1px;
+}
+.project_table img{
+        width:100%; height:auto;
+}
+
 
 /* Media Queries
 --------------------------------------------------------------------------------------------------------------- */

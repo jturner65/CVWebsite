@@ -3,8 +3,8 @@
  */
 $(document).ready(function (){
 	
-	// load slidertron file slider div 
-	$('#slidertron_banner').load("cvlayout/data/sliderTron.html #slider", function (){		
+	// load slidertron file slider div into banner when slidertron_banner div is loaded 
+	$('#slidertron_banner').load("cvlayout/data/sliderTron.html #slider", function (){	
 		$('#slider').slidertron({
 			viewerSelector: '.viewer',
 			reelSelector: '.viewer .reel',
@@ -17,6 +17,4 @@ $(document).ready(function (){
 			slideLinkSelector: '.link'
 		});	
 	});
-	
-	
 })

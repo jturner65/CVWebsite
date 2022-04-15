@@ -28,7 +28,10 @@ File: Layout CSS
 #header #logo{
 }
 #header #logo h1{margin:0; padding:0; font-size:22px;}
-
+#header #logo a[href*="mailto:"]{
+	background:url("./images/emailIcon.png") no-repeat left center;
+	padding-left:40px;
+}
 #header .nospace.inline{text-transform:uppercase; font-size:.8rem;}
 #header .nospace.inline li{margin:0 15px 0 0; padding:0 20px 0 0; border-right:1px solid;}
 #header .nospace.inline li:last-child{margin:0; padding-right:0; border:none;}

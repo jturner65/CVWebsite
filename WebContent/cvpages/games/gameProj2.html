@@ -11,18 +11,21 @@ Licence URI: http://www.os-templates.com/template-terms
 <title>John Turner | Unity Games | MechArchon Game</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
-	<script type="text/javascript">
-	<!--
+ <link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+ 
+<!-- 	
+<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+-->
+<!-- 	
+<script type="text/javascript">	
 	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
 	if (document.location.protocol == 'https:')
 		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
 	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
-	-->
 	</script>
+-->
+<!--
 	<script type="text/javascript">
-	<!--
 		var config = {
 			width: 1200, 
 			height: 750,
@@ -67,10 +70,11 @@ Licence URI: http://www.os-templates.com/template-terms
 			});
 			u.initPlugin(jQuery("#unityPlayer")[0], "Archon.unity3d");
 		});
-	-->
 	</script>
+-->
+<!--
 	<style type="text/css">
-	<!--
+	
 	body {
 		font-family: Helvetica, Verdana, Arial, sans-serif;
 		background-color: white;
@@ -121,9 +125,8 @@ Licence URI: http://www.os-templates.com/template-terms
 		height: 750px;
 		width: 1200px;
 	}
-	-->
 	</style>
-
+-->
 </head>
 <body id="top">
 <div class="wrapper row0">
@@ -237,7 +240,8 @@ Licence URI: http://www.os-templates.com/template-terms
 <main class="container clear"> 
     <!-- main body -->
     <div class="content"> 
-      <h1>MechArchon Game</h1>
+      	<h1>MechArchon Game</h1>
+      	<!-- 
       	<div class="content">
 			<div id="unityPlayer">
 				<div class="missing">
@@ -253,7 +257,7 @@ Licence URI: http://www.os-templates.com/template-terms
 			</div>
 		</div>
 		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
-      
+       	-->
       <div class="scrollable">
         <table>
           <thead>
@@ -281,7 +285,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <p>This was the semester game design project for CS4455 - Game Design.  It was built by 
       a team of 3 students, including myself, where one student worked on the UI, one worked on one of the models and some of the ray casting/targetting, 
       and I worked on pretty much everything.  That's not to say that the other students were slackers, but rather I asked them all to allow me to sort of steamroll through.  
-      I had already built most of the models for the demo, an I had the basic structure of the game already coded as well. </p>
+      I had already built most of the models for the demo, and I had the basic structure of the game already coded as well. </p>
       <p>In the end, the final unity project consisted of around 15,000 lines of C# code, about 90% of which I coded in the space of 2 weeks. Every actor in the game inherited 
       from a master class that implemented the majority of the behavior and physics, with individual inheriting classes for each of the 6 different types of possible actors implementing
       what was unique to each.  Every type of character had different motion, health, speed and combat profiles, and balancing each was fun.  Each of 3 primary actors the player could
@@ -290,7 +294,7 @@ Licence URI: http://www.os-templates.com/template-terms
       actors under his control, to give a squad-style flavor as well.  The enemies were also drawn from the same 6 actors, and spawned from 3 locations on the map.  Their AI wasn't too tricky, 
       although I did code it to not be easily fooled into attacking throw-away actors. </p>
       <p>The professor told me he was surprised we got everything we set out to do done.  It was a pretty epic project, and turned out pretty well, although I have since put a lot of time into
-      refactoring the AI and improving the ray casting/targeting, among other things.  I've waited since I played my first non-console game in 1983 to have an environment to work in like Unity, so I relish the
+      refactoring the AI and improving the ray casting/targeting, among other things.  I had waited since I played my first non-console game in 1983 to have an environment to work in like Unity, so I still relish the
       opportunity to fiddle with this game.</p>
     </div>
     <!-- / main body -->

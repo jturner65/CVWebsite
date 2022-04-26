@@ -8,7 +8,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>John Turner | Computer Music | Sequencer and Music Visualizer using JCuda FFT Ocean</title>
+<title>John Turner | Computer Music | Mass-Spring Ball Music Visualization and DFT-based note and beat detection.</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -17,7 +17,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <div class="wrapper row0">
   <header id="header" class="clear"> 
     <div id="logo" class="fl_left">
-      <h1><a href="mailto:7strbass@gmail.com?subject=Your Website"></a><a href="../../index.html">John Turner | Sequencer and JCuda Music Visualizer</a></h1>
+      <h1><a href="mailto:7strbass@gmail.com?subject=Your Website"></a><a href="../../index.html">John Turner | Demo Man</a></h1>
     </div>
     <div class="fl_right">
       <ul class="nospace inline">
@@ -36,7 +36,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <ul>
         <li><a href="../../index.html">Home</a></li>
         <li><a href="portfolioGames.html">Games Portfolio</a></li>
-        <li><a href="#">Sequencer and Music Visualizer using JCuda FFT Ocean</a></li>
+        <li><a href="#">Mass-Spring Ball Music Visualization and DFT-based note and beat detection.</a></li>
       </ul>
     </div>
   </div>
@@ -61,28 +61,29 @@ Licence URI: http://www.os-templates.com/template-terms
           </thead>
           <tbody>
             <tr>
-              <td>CS 8803 Computational Aesthetics</td>
+              <td>PhD Research Project (1st Semester)</td>
               <td>Jarek Rossignac</td>              
-              <td>Fall 2015</td>
+              <td>Fall 2017</td>
               <td>Java/JCuda</td>
               <td>No</td>
-              <td><a href="https://github.com/jturner65/SequencerWithJCudaOcean">Github Repo</a></td>
+              <td><a href="https://github.com/jturner65/DancingBalls">Github Repo</a></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p>This project was the final project for the Computational Aesthetics class I took with Jarek Rossignac in Fall 2015.  I'd wanted to code up a sequencer since I first
-      started using Cakewalk synched to ADAT's via MMC commands in 1996.  There were a few objectives with this project that I wanted to meet, 
-      beyond the scope of the original assignment (which was two-fold - 1) to implement a sequencer/multi-track synthesizer using spherical UI "devices" to compose the music 
-      (as opposed to linear mechanisms like conductor score or piano roll) accenting the cyclic nature of the intended result and 2) to visualize the resultant music via some 
-      frequency-domain-dervied graphical process).</p>
-      <p>I also implemented a staff/conductor score mechanism for input/playback that responded to trajectory inputs (which in turn could be edited) and facilitated such functionality as 
-      user-configurable key signature and time signature.  For visualization I coded up a JCuda version of NVidia's CUDA FFT Ocean demo, and mixed the music being played into the frequency
-      space of the generated noise. (<a href = "http://graphics.ucsd.edu/courses/rendering/2005/jdewall/tessendorf.pdf"  target="_blank">The origin of this FFT-based simulation process can be found here</a>) </p>
-      <table class="project_table" >
-      	<tr><td><a href="../../cvexclips/games/proj04/PurpleHazeOcean.mp4">FFT-based ocean sim with frequencies convolved with music</a></td></tr>
-      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/games/proj04/PurpleHazeOcean.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <p>I made this project my first semester as a PhD student, along with working on the <a href="../charanim/charanimProj7.html">Assistive getup project with Professor Liu.</a> </p>
+      <p>The primary goal of this project was to synthesize dynamic motion in a physically-simulated (mass-spring) ball based on musical content (beat and frequency content) in a "dance"-like manner.  
+      To facilitate this, I wrote frequency analysis tools for using both standard FFT and frequency-specific DFT transforms (which were much more accurate, all other things being equal, using the piano keys as center freqs), which I calculated myself using multiple threads for speed. </p>
+      <p>The mass-spring ball is excited by scaled energy content in tiled patterns over the ball's surface that form zones, with the zones being larger or smaller based on the frequency content.  Detected "beats" (cyclic increases in acoustic energy) in various frequency bands were used to excite the ball.</p>
+       <table class="project_table" >
+      	<tr><td><a href="../../cvexclips/games/proj05/demoOfVis.mp4">Mass-spring ball visualization</a></td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/games/proj05/demoOfVis.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      	<tr><td><a href="../../cvexclips/games/proj05/fftThenDftBassNotes.mp4">Demonstration of FFT and DFT (switches halfway through) analysis, showing DFT benefits, particularly in the lower frequencies.</a></td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/games/proj05/fftThenDftBassNotes.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      	<tr><td><a href="../../cvexclips/games/proj05/demoOfPianoRoll.mp4">Piano roll functionality</a></td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/games/proj05/demoOfPianoRoll.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
   	  </table>
+       
     </div>
     <!-- / main body -->
     <div class="clear"></div>

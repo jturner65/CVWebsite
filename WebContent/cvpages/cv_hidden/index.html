@@ -73,8 +73,8 @@ which is the area I feel I need the most guidance in.</p>
 trained baseline function (used to stabilize training and reduce variance between epochs/policy updates) will act like a Value function approximator, and if the BOT's assistance (i.e. a force vector applied to ANA) is included as part of
 ANA's state then this VF approximator could be used via optimization to propose the best assistance for any given state.</p>
     <table id="GetUpClipTbl1" >
-      <tr><td><a href="../../cvexclips/cv_hidden/assistGetUp1.mp4">Assistive Getup</a></td></tr>
-      <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/cv_hidden/assistGetUp1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj07/assistGetUpWithContactDupe.mp4">Assistive Getup</a></td></tr>
+      <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/charanim/proj07/assistGetUpWithContactDupe.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
    	</table>    
 <p>In the video, The ANA figure shown on the left is responding to a random trajectory providing assistance in the form of a 3D force vector, using a policy to derive control torques given 
 pose q, angular joint velocity qdot and assistive force vector (in 3 D).  This ANA is forward simulated a single step to derive contact information.  The coupled ANA-BOT pair on the right 
@@ -87,8 +87,8 @@ but as the state grew in size, the VF approx seemed to suffer from the increased
 <p>(Spring 2017)  This project I worked on mostly independently, although I initially began investigating GAN's at Professor Liu's suggestion.  The hypothesis here was that, using a properly configured classification 
 component the generator could be trained to produce desired sequences of any duration and exhibiting active camera transformations that it had never seen during training. </p>
     <table id="CondGanClipTbl1" >
-      <tr><td><a href="../../cvexclips/cv_hidden/rndGenExample.mp4">Example of Synthesized Training Data</a>.  Synthesized Training Data used with CondGAN.</td></tr>
-      <tr><td><video width="800" height="800" autoplay loop><source src="../../cvexclips/cv_hidden/rndGenExample.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj08/rndGenExample.mp4">Example of Synthesized Training Data</a>.  Synthesized Training Data used with CondGAN.</td></tr>
+      <tr><td><video width="800" height="800" autoplay loop><source src="../../cvexclips/charanim/proj08/rndGenExample.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
    	</table>    
 <p>I synthesized millions of training data consisting of variable length sequences of images of a biped moving its right arm in a trajectory of a lower case English letter (a-z).  I varied the camera location and orientation for each 
 sample trajectory, along with the colors and shapes of the head and hand, but all of these components remained fixed throughout the training trajectory.  All of these descriptive components of each training trajectory were encoded in the 
@@ -98,12 +98,12 @@ each frame within the sequence as a "floating point" 1 hot of length 10 each, wh
 as can be seen in the examples below.  Across each row the letters a-z are being drawn - some of the trajectories are clipped but most are surprisingly coherent.  The duration of the trajectories is determined by how quickly the progress bar/floating point 1-hot evolves.
 (Sorry these are so small, click on the titles and they will open in bigger window). </p>
     <table id="CondGanClipTbl2" >
-      <tr><td><a href="../../cvexclips/cv_hidden/gestIKcondCam1.mp4">Generator Output</a>. These trajectories vary in length.  Across each row, a-z is demonstrated (except the last row of course, which was truncated due to the limitations of my video card) while each row is progressivly slower in duration. </td></tr>
-      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/cv_hidden/gestIKcondCam1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
-      <tr><td><a href="../../cvexclips/cv_hidden/gestIKcondCam2.mp4">Generator Output</a>.  These trajectories also include varying camera translation.</td></tr>
-      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/cv_hidden/gestIKcondCam2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
-      <tr><td><a href="../../cvexclips/cv_hidden/gestIKcondCam4_2.mp4">Generator Output</a>. These trajectories demonstrate camera rotation during the trajectory evolution.  </td></tr>
-      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/cv_hidden/gestIKcondCam4_2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj08/gestIKcondCam1.mp4">Generator Output</a>. These trajectories vary in length.  Across each row, a-z is demonstrated (except the last row of course, which was truncated due to the limitations of my video card) while each row is progressivly slower in duration. </td></tr>
+      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/charanim/proj08/gestIKcondCam1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj08/gestIKcondCam2.mp4">Generator Output</a>.  These trajectories also include varying camera translation.</td></tr>
+      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/charanim/proj08/gestIKcondCam2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj08/gestIKcondCam4_2.mp4">Generator Output</a>. These trajectories demonstrate camera rotation during the trajectory evolution.  </td></tr>
+      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/charanim/proj08/gestIKcondCam4_2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
    	</table>    
 <p>An interesting discovery was that to synthesize a coherent trajectory, I needed to keep the noise vector <b>fixed</b> throughout the trajectory.  By varying the other conditional class tags, the trajectory is evolved. 
  One consequence of this is that many more unique trajectories are possible than were seen in training - for each fixed noise vector, a particular trajectory exhibiting certain characteristics can be synthesized.</p> 

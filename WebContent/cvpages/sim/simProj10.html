@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Simulation | Snow Globe 2 (3D Fluid and Particle Snow in a Globe)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top"><noscript><h1>   Your browser does not support JavaScript!  My webpage will be impossible to navigate without it :(</h1></noscript>
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="mailto:7strbass@gmail.com?subject=Your Website"></a><a href="../../index.html">John Turner | MPM Snow Simulation via CUDA</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1" id="topbarMenu"></div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/sim/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="portfolioSim.html">Simulation Portfolio</a></li>
+        <li><a href="#">MPM Snow Simulation via CUDA</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>MPM Snow Simulation via CUDA</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CSE 6730 (continued as personal project)</td>
+              <td>Richard Fujimoto</td>              
+              <td>Spring 2018</td>
+              <td>Java/JCUDA</td>
+              <td>No</td>
+              <td><a href="https://github.com/jturner65/MPM_CudaSim2.0">Github Repo - MPM Snow</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+      <p>MPM Cuda project with recompiled kernel, and updated to Jcuda for CUDA 9.2</p>
+      <p>Originally this project was a team project for a Simulation class, where we implemented both multithreaded CPU-based and GPU-based (via CUDA) solutions for snow simulation based on the famous 
+      <a href="https://www.math.ucla.edu/~jteran/papers/SSCTS13.pdf">Material Point Method for Snow Simulation paper</a>, which I had wanted to implement since I saw the paper at Siggraph the year it came out.</p> 
+		<p>Like most school projects, it had a few bugs, which I've since ironed out, and I've also merged a few of the kernel functions and fixed a few bugs in the calculations, restructured 
+			how the kernel calls are built and called, and generally cleaned up and streamlined the java code. 
+			I've also changed some of the default values so that the sim isn't so brittle, which enabled me 
+			to increase the timestep by a factor of 10.</p>
+     <table class="project_table" >
+   		<tr><td><a href="../../cvexclips/sim/proj10/MPM_Snow_JCuda.mp4">MPM Snow Simulation via CUDA</a> </td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj10/MPM_Snow_JCuda.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+ 	</table>
+	
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery-3.6.0.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script><script src="../../cvlayout/scripts/jtTools.js"></script>
+</body>
+</html>

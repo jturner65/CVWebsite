@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+Template Name: Orizon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>John Turner | Character Animation | Conditional GAN-based Camera Transform Derivation via Synthetic Data.</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top"><noscript><h1>   Your browser does not support JavaScript!  My webpage will be impossible to navigate without it :(</h1></noscript>
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="mailto:7strbass@gmail.com?subject=Your Website"></a><a href="../../index.html">John Turner | Conditional GAN-based Camera Transform Derivation via Synthetic Data.</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+      	<li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../CV.html">CV</a></li>
+        <li><a href="../music.html">Music</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+<div class="wrapper row1" id="topbarMenu"></div>
+<div class="wrapper row2 bgded" style="background-image:url('../../cvimages/charanim/backgrounds/02.png');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="portfolioCharAnim.html">Character Animation Portfolio</a></li>
+        <li><a href="#">Conditional GAN-based Camera Transform Synthesis</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <h1>CondGANCameraman : Teaching a CondGAN about Camera Transformations and Variable Length Sequences using Synthesized Training Data.</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Date</th>
+              <th>Language</th>
+              <th>Ta'ed</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>pre-PhD Research Project</td>
+              <td>Karen Liu</td>
+              <td>Spring 2017 (Continued as Personal Project)</td>
+              <td>C++/python</td>
+              <td>No</td>
+              <td><a href="https://github.com/jturner65/GestureIKCondGAN">Github Repo - Conditional GAN Cameraman</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>     
+    
+
+<h3>CondGANCameraman : Teaching a CondGAN about Camera Transformations and Variable Length Sequences using Synthesized Training Data.</h3>
+<p>(Spring 2017)  This project I worked on mostly independently, although I initially began investigating GAN's at Professor Liu's suggestion.  The hypothesis here was that, using a properly configured classification 
+component the generator could be trained to produce desired sequences of any duration and exhibiting active camera transformations that it had never seen during training. </p>
+    <table id="project_table">
+      <tr><td><a href="../../cvexclips/charanim/proj08/rndGenExample.mp4">Example of Synthesized Training Data</a>.  Synthesized Training Data used with CondGAN.</td></tr>
+      <tr><td><video width="800" height="800" autoplay loop><source src="../../cvexclips/charanim/proj08/rndGenExample.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+   	</table>    
+<p>I synthesized millions of training data consisting of variable length sequences of images of a biped moving its right arm in a trajectory of a lower case English letter (a-z).  I varied the camera location and orientation for each 
+sample trajectory, along with the colors and shapes of the head and hand, but all of these components remained fixed throughout the training trajectory.  All of these descriptive components of each training trajectory were encoded in the 
+class vector component of the GAN.  I encoded the letter of the trajectory as a 1-hot vector, the camera position and orientation as matrices and quaternions, respectively, and the colors and location of 
+each frame within the sequence as a "floating point" 1 hot of length 10 each, where the percentage of progress or color was encoded between 2 adjacent values within the span of the 1-hot vector with a sum of 1.0 - similar to a progress bar. </p>
+<p>Once the CondGAN was trained, I was able to synthesize sequences, as shown below, that not only varied in duration but also varied the camera orientation/distance during the trajectory, 
+as can be seen in the examples below.  Across each row the letters a-z are being drawn - some of the trajectories are clipped but most are surprisingly coherent.  The duration of the trajectories is determined by how quickly the progress bar/floating point 1-hot evolves. </p>
+    <table id="project_table" >
+      <tr><td><a href="../../cvexclips/charanim/proj08/gestIKcondCam1.mp4">Generator Output</a>. These trajectories vary in length.  Across each row, a-z is demonstrated (except the last row of course, which was truncated due to the limitations of my video card) while each row is progressivly slower in duration. </td></tr>
+      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/charanim/proj08/gestIKcondCam1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj08/gestIKcondCam2.mp4">Generator Output</a>.  These trajectories also include varying camera translation.</td></tr>
+      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/charanim/proj08/gestIKcondCam2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj08/gestIKcondCam4_2.mp4">Generator Output</a>. These trajectories demonstrate camera rotation during the trajectory evolution.  </td></tr>
+      <tr><td><video width="1200" height="300" autoplay loop><source src="../../cvexclips/charanim/proj08/gestIKcondCam4_2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+   	</table>    
+<p>An interesting discovery was that to synthesize a coherent trajectory, I needed to keep the noise vector <b>fixed</b> throughout the trajectory.  By varying the other conditional class tags, the trajectory is evolved. 
+ One consequence of this is that many more unique trajectories are possible than were seen in training - for each fixed noise vector, a particular trajectory exhibiting certain characteristics can be synthesized.</p> 
+ <p>I believe that synthesizing reasonable training data would be helpful for many ML tasks, and the ability of the GAN to produce reasonable camera transformations was surprising, at least to me.</p>
+
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">johnmturner.com</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="../../cvlayout/scripts/jquery-3.6.0.min.js"></script>
+<script src="../../cvlayout/scripts/jquery.backtotop.js"></script>
+<script src="../../cvlayout/scripts/jquery.mobilemenu.js"></script>
+<script src="../../cvlayout/scripts/jtTools.js"></script>
+</body>
+</html>

@@ -68,20 +68,20 @@
 The first project was the primary project of my PhD so far, working with Professor Karen Liu, while the other project was mostly an independent pursuit.</p>
 <p>Neither of these projects resulted in a paper, which illustrates my greatest weakness as a researcher (namely knowing "When is enough enough? (i.e. Time to Stop Working and Write the paper!)")
 which is the area I feel I need the most guidance in.</p>
-<h3>Assistive Getup - Using VF Approximation to Derive Optimal Assistance.</h3>
+<h3>Assistive Getup - Using Value Function Approximation to Derive Optimal Assistance.</h3>
 <p>(Started Fall 2017) This project had been my primary project as a PhD so far.  The underlying hypothesis was that, given an environment consisting of an Agent Needing Assistance(ANA), and an Assisting Bot (BOT), the 
 trained baseline function (used to stabilize training and reduce variance between epochs/policy updates) will act like a Value function approximator, and if the BOT's assistance (i.e. a force vector applied to ANA) is included as part of
-ANA's state then this VF approximator could be used via optimization to propose the best assistance for any given state.</p>
+ANA's state then this Value Function approximator could be used via optimization to propose the best assistance for any given state.</p>
     <table id="GetUpClipTbl1" >
-      <tr><td><a href="../../cvexclips/charanim/proj07/assistGetUpWithContactDupe.mp4">Assistive Getup</a></td></tr>
+      <tr><td><a href="../../cvexclips/charanim/proj07/assistGetUpWithContactDupe.mp4">Assistive Getup</a> A robotic arm helps ANA get up.</td></tr>
       <tr><td><video width="800" height="600" autoplay loop><source src="../../cvexclips/charanim/proj07/assistGetUpWithContactDupe.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
    	</table>    
 <p>In the video, The ANA figure shown on the left is responding to a random trajectory providing assistance in the form of a 3D force vector, using a policy to derive control torques given 
 pose q, angular joint velocity qdot and assistive force vector (in 3 D).  This ANA is forward simulated a single step to derive contact information.  The coupled ANA-BOT pair on the right 
 are consuming the same policy, but the BOT is providing the assistance force via derived Optimal Control using the assistance proposal provided by the Value Function Optimization.</p>
 <p>The problem with this project was that the results proved inconclusive.  While in the example above, the improved behavior is evident, many configurations did not exhibit such definitive results, with some performing no better despite optimal assistance proposals.</p>        
-<p>Initially we worked in 2D, with a partial humanoid (waist-down) with a much smaller state (16 dofs vs 33) and in this case the VF approximator provided a good optimal force proposal, 
-but as the state grew in size, the VF approx seemed to suffer from the increased dimension and yielded a much less definitive force proposal.</p>
+<p>Initially we worked in 2D, with a partial humanoid (waist-down) with a much smaller state (16 DOFs vs 33) and in this case the Value Function approximator provided a good optimal force proposal, 
+but as the state grew in size, the Value Function approximation seemed to suffer from the increased dimension and yielded a much less definitive force proposal.</p>
 
 <h3>CondGANCameraman : Teaching a CondGAN about Camera Transformations and Variable Length Sequences using Synthesized Training Data.</h3>
 <p>(Spring 2017)  This project I worked on mostly independently, although I initially began investigating GAN's at Professor Liu's suggestion.  The hypothesis here was that, using a properly configured classification 

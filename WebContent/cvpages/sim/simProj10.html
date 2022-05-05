@@ -67,8 +67,30 @@ Licence URI: http://www.os-templates.com/template-terms
         </table>
       </div>
       <p>This project is an update to <a href="">my original boids project.</a>, where I support adding more flocks (5 instead of 3) and have all the various boid 
-      force calculations performed in multiple threads, to support more boids and speed things up. Its also using my updated UI window code, which is a lot more flexible and capable.
-       You can visualize/"sail" from "on the deck" of any of the boid ships, simplify rendering by representing all boids as spheres, and more.</p>
+      force calculations performed in multiple threads, so that each flock has its members equally partitioned to each thread, to support more boids as well as to increase overall speed. 
+      Its also using my updated UI window code, which is a lot more flexible and capable of handling more input mechanisms (such as the per-flock UI for modifying that flocks parameters and weights for each of the boid force and behavior calculations).
+       You can visualize/"sail" from "on the deck" of any of the boid ships in any of the flocks, and you can also simplify rendering and speed up the visualization even more by representing all boids as spheres. 
+       There is also visualization of velocity vectors for each boid, forces on the boids, and even selectively disable any of the individual boid force calculation equations 
+       (Velocity match, wandering, control and collision avoidance.).</p>
+       <p>The videos below demonstrate some of the features of this updated version. First, the speed increase is apparent, as well as the increase in number of boids able to be supported 
+       (nearly 10,000 fully animated boats before the simulation playback becomes intolerably slow). At about 10 seconds into the second clip, 
+       the speedup of representing each boid as a sphere is apparent, instead of the animated boats.  Each "boat" is made from a collection of multiple mesh instances of the same boat except 
+       with different oar placements forming the rowing animation. The instances are cycled a speed proportional to the magnitude of that particular boid's velocity. The overhead of this animation is removed when rendering 
+       the spheres, although I think the animation is really cool.  At about 20 seconds into the second video the POV is set to be on the poop deck of a few different boids. You can select whichever flock and boid you would like to experience
+       this POV via the UI. In the second and third videos the flocks attack each other, and in the third video, 
+       the reproduction rate of the Green flock proved insufficient to counter its predation at the oars of the Purple flock, rendering it extinct. It would be an interesting optimization problem to find a balance between the 
+       various hunting and reproduction parameters (which are initially all different for each flock) so that the flock populations remain in equilibrium. Even more interesting if some parameters are fixed and have to be optimized around. </p>
+     <table class="project_table" >
+   		<tr><td><a href="../../cvexclips/sim/proj10/boidsV2_1flock1.mp4">Single flock of 500 animated boats.</a> This is demonstrating the massive speedup from multithreading the entire boid calc path. 
+   		On my machine there are 30 threads available, so 16-17 boids are handled per thread.</td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj10/boidsV2_1flock1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+     	<tr><td><a href="../../cvexclips/sim/proj10/boidsV2_5flock1.mp4">5 flocks, each with an initial count of 500 animated boats.</a> When there were multiple flocks, each flock's members are equally 
+     	distributed amongst the threads available, although all boids still interact with all other boids, regardless of which thread their calculations take place in.</td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj10/boidsV2_5flock1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+     	<tr><td><a href="../../cvexclips/sim/proj10/boidsV2_5flock2.mp4">More of the 5 flocks</a> About a third of the way through this video, the visualization is changed to sphere and the velocity vectors are 
+     	displayed, and the simulation noticeably slows. This is because each boid has to have certain parameters "refreshed" which currently is done in a single thread process.  Watch the Green flock's population-they go extinct about halfway through.</td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj10/boidsV2_5flock2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+ 	</table>
  
 	
     </div>

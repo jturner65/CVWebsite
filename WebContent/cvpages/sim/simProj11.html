@@ -8,7 +8,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>John Turner | Simulation | Multi-threaded 3D Boids v2.0</title>
+<title>John Turner | Simulation | MPM Snow Simulation via CUDA</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../../cvlayout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -17,7 +17,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <div class="wrapper row0">
   <header id="header" class="clear"> 
     <div id="logo" class="fl_left">
-      <h1><a href="mailto:7strbass@gmail.com?subject=Your Website"></a><a href="../../index.html">John Turner | Multi-threaded 3D Boids v2.0</a></h1>
+      <h1><a href="mailto:7strbass@gmail.com?subject=Your Website"></a><a href="../../index.html">John Turner | MPM Snow Simulation via CUDA</a></h1>
     </div>
     <div class="fl_right">
       <ul class="nospace inline">
@@ -36,7 +36,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="portfolioSim.html">Simulation Portfolio</a></li>
-        <li><a href="#">Multi-threaded 3D Boids v2.0</a></li>
+        <li><a href="#">MPM Snow Simulation via CUDA</a></li>
       </ul>
     </div>
   </div>
@@ -45,31 +45,42 @@ Licence URI: http://www.os-templates.com/template-terms
   <main class="container clear"> 
     <!-- main body -->
     <div class="content"> 
-      <h1>Multi-threaded 3D Boids v2.0</h1>
-            <div class="scrollable">
+      <h1>MPM Snow Simulation via CUDA</h1>
+      <div class="scrollable">
         <table>
           <thead>
             <tr>
-              <th>Source</th>
+              <th>Class</th>
+              <th>Instructor</th>
               <th>Date</th>
               <th>Language</th>
+              <th>Ta'ed</th>
               <th>Code</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Personal Project</td>
+              <td>CSE 6730 (continued as personal project)</td>
+              <td>Richard Fujimoto</td>              
               <td>Spring 2018</td>
-              <td>GLSL/Java/Processing</td>
-              <td><a href="https://github.com/jturner65/BoidsV2">Github Repo</a></td>
+              <td>Java/JCUDA</td>
+              <td>No</td>
+              <td><a href="https://github.com/jturner65/MPM_CudaSim2.0">Github Repo - MPM Snow</a></td>
             </tr>
           </tbody>
         </table>
-      </div>
-      <p>This project is an update to <a href="">my original boids project.</a>, where I support adding more flocks (5 instead of 3) and have all the various boid 
-      force calculations performed in multiple threads, to support more boids and speed things up. Its also using my updated UI window code, which is a lot more flexible and capable.
-       You can visualize/"sail" from "on the deck" of any of the boid ships, simplify rendering by representing all boids as spheres, and more.</p>
- 
+      </div>      
+      <p>MPM Cuda project with recompiled kernel, and updated to Jcuda for CUDA 9.2</p>
+      <p>Originally this project was a team project for a Simulation class, where we implemented both multithreaded CPU-based and GPU-based (via CUDA) solutions for snow simulation based on the famous 
+      <a href="https://www.math.ucla.edu/~jteran/papers/SSCTS13.pdf">Material Point Method for Snow Simulation paper</a>, which I had wanted to implement since I saw the paper at Siggraph the year it came out.</p> 
+		<p>Like most school projects, it had a few bugs, which I've since ironed out, and I've also merged a few of the kernel functions and fixed a few bugs in the calculations, restructured 
+			how the kernel calls are built and called, and generally cleaned up and streamlined the java code. 
+			I've also changed some of the default values so that the sim isn't so brittle, which enabled me 
+			to increase the timestep by a factor of 10.</p>
+     <table class="project_table" >
+   		<tr><td><a href="../../cvexclips/sim/proj11/MPM_Snow_JCuda.mp4">MPM Snow Simulation via CUDA</a> </td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj11/MPM_Snow_JCuda.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+ 	</table>
 	
     </div>
     <!-- / main body -->

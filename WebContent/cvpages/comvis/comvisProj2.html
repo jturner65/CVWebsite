@@ -69,14 +69,14 @@
       </div>
 		<table id="project_table">
 		<tr><td>
-		<div style="float: right; padding: 20px; widht:100%">
+		<div style="float: right; padding: 20px; width:100%">
 		<img src="../../cvimages/comvis/comvisProj2/images/rushmoreRawPoints.jpg" />
 		<p style="font-size: 14px">That's a lot of points - 1000 initial interest points on Mount Rushmore.</p>
 		</div>
 		</td></tr>
 		</table>
 		<p> 	This project was concerned with implementing an algorithm that could recognize
-		similarites between two images by finding interesting features in each and matching these
+		similarities between two images by finding interesting features in each and matching these
 		features accurately.  Through this mechanism a sufficiently high accuracy level of the 
 		matchings would imply that the images were of the same thing.  The algorithm driving this
 		process had 3 parts : 
@@ -112,7 +112,8 @@
 		of MyImFilter and specifically FFT, from the first project for the convolutions, since I understood it and already had some 
 		built in utilities to manage different channels.</li>
 		<h3>Notre Dame Image 1</h3>
-		<pre><code>%Building Edge Images
+		<pre>
+		<code>%Building Edge Images
 		    sig = 1;
 		    sz = (sig*4)+1;
 		    dgfilter=fspecial('gauss',[sz, sz], sig);
@@ -121,7 +122,8 @@
 		    Ix = myImFilter(image, dgx,filterMethod);
 		    %gradient of image in y dir
 		    Iy = myImFilter(image, dgy,filterMethod); 
-		</code></pre>
+		</code>
+		</pre>
 		<table id="project_table">
 		<tr><td>1) Derivative of Gaussian in X Convolution</td><td>Derivative of Gaussian in Y Convolution</td></tr>
 		<tr>
@@ -475,6 +477,7 @@
 			<td><img src="../../cvimages/comvis/comvisProj2/images\features\image2\315degImg2.jpg" width="300px"/></td>
 		</tr>
 		</table>
+    </div>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

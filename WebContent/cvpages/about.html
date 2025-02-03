@@ -45,17 +45,63 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <div class="content"> 
       <h1>About Me</h1>	   
-  	  <p>I am a computer programmer passionate about Graphics, Simulation and Machine Learning, a <a href="music.html" target="_blank">bass player since 1983</a> 
-  	  afflicted with a <a href="../cvmisc/lordonly/lojtbas1.htm" target="_blank">30 year fetish for too-many-strings</a>; a collector of Pixar teapots and Carrera slot-cars; 
-  	  a husband, father and crazy cat-dude.  I live in Roswell, Georgia, I've been married since 2001, 
-  	  I have 3 wonderful <del>minions</del> kids (my daughter was born in 2007 and my twin boys in 2011) and, currently, 7 pampered, indoor cats.</p>
+  	  <p>I am a computer programmer passionate about Graphics, Physically-Based Simulation and Machine Learning, a <a href="music.html" target="_blank">bass player since 1983</a> 
+  	  afflicted with a <a href="../cvmisc/lordonly/lojtbas1.htm" target="_blank">30+ year fetish for too-many-strings</a>; a collector of Pixar teapots and Carrera slot-cars; 
+  	  a husband, father and crazy cat-dude.  I live in Roswell, Georgia, I've been married since 2001, I have 3 wonderful <del>minions</del> kids (my daughter was born in 2007 
+  	  and my twin boys in 2011) and, currently, 7 pampered, indoor cats.</p>
+  	  
   	  <h1>Recent Professional Accomplishments</h1>
-      <p>At the end of March 2022 I completed a 2 year contract as a Research Engineer working on the <a href="https://aihabitat.org/" target="_blank">Habitat</a> project, 
-      a simulation platform for research in <a href="https://embodied-ai.org/" target="_blank">Embodied AI</a>. My focus has been developing in C++ and python, expanding 
-      the functionality, flexibility, stability and dataset support of the simulation platform, <a href="https://github.com/facebookresearch/habitat-sim" target="_blank">Habitat-Sim</a>.  
-      I still contribute to the project when I can, and <a href="https://github.com/facebookresearch/habitat-sim/graphs/contributors" target="_blank">a summary of my contributions 
-      since March 2020 can be viewed on Github.</a>  From October 2013 to November 2016 I also worked full time as a Data Scientist at 
-      <a href="http://www.ignitionone.com/" target="_blank">IgnitionOne</a>, an independent online marketing company. </p>
+  	  <h2>Meta AI Research</h2>
+  	  <p>In March of 2020 I joined the <a href="https://aihabitat.org/" target="_blank">Habitat</a> team on the first of 2 two year contracts as a Research Engineer. While my title was Research Engineer, most of my job description was focused on C++ and Python development in the <a href="https://github.com/facebookresearch/habitat-sim" target="_blank">Habitat-Sim</a> platform, 
+  	  reworking and expanding its functionality, flexibility, stability, tooling and dataset support to make it a more complete, accurate and excellent simulation platform to be used for Embodied AI agent training. Basically Habitat-Sim is a game engine for robots to learn how to navigate, find things and generally help people in their homes. 
+  	  <a href="https://github.com/facebookresearch/habitat-sim/pulls?q=is%3Apr+is%3Aclosed+author%3Ajturner65+is%3Amerged+closed%3A%3C2023-01-30+" target="_blank">The 250 approved and merged Pull Requests I authored during this first contract can be seen here</a></p>      
+      <p>Among my proudest accomplishments during this first contract is the design and implementation of <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/core/Configuration.h" target="_blank">a hierarchical Configuration</a> 
+      system that can hold any number of values of various types in a single string-keyed map, along with any number of string-keyed Configurations, and a <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/core/managedContainers/ManagedContainer.h" target="_blank">Managed Container</a>
+      class template that provides a pseudo-database/map-like construct with<a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete" target="_blank">CRUD</a>-like access to collections of similar 
+      <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/core/managedContainers/AbstractManagedObject.h" target="_blank">Managed Objects</a>, 
+      which can be Configurations or <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/physics/objectWrappers/ManagedPhysicsObjectBase.h" target="_blank">other constructs</a>.</p>
+      <p>With these tools I made the <a href="https://aihabitat.org/docs/habitat-sim/attributesJSON.html" target="_blank">JSON-based Metadata layout definitions</a> 
+      that provide the recipe for implementing all assets and scenes used by all Habitat Scene Datasets, and the commensurate <a href="https://github.com/facebookresearch/habitat-sim/tree/main/src/esp/metadata/attributes" target="_blank">C++ Configuration-based Attributes and their owning Managed Containers</a>, 
+      all collected and managed in the <a href="https://github.com/facebookresearch/habitat-sim/tree/main/src/esp/metadata" target="_blank">Metadata subsystem</a> that is used to manage and serve the metadata to users in Python via Pybind11 bindings for the  
+      <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/bindings/AttributesBindings.cpp" target="_blank">attributes</a> and <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/bindings/AttributesManagersBindings.cpp" target="_blank">managers</a> as well as 
+      internal C++ consumers via the <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/metadata/MetadataMediator.h" target="_blank">MetadataMediator</a> directly, which owns and manages the metadata for all loaded scene datasets. 
+      This facilitated the complete rewrite of the scene load procedure used to instantiate all assets and scenes in the simulator engine to a unified single pathway. The ManagedObject/ManagedContainer tools were also very useful for implementing a 
+      <a href="https://github.com/facebookresearch/habitat-sim/pull/1182" target="_blank">weak-pointer-based wrapper interface system</a> to the internal representations of the rigid and articulated objects 
+       to provide safe access to these constructs, again either for users in Python via bindings of the <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/bindings/PhysicsObjectBindings.cpp" target="_blank">Physics Object wrappers</a> and the 
+       <a href="https://github.com/facebookresearch/habitat-sim/blob/main/src/esp/bindings/PhysicsWrapperManagerBindings.cpp" target="_blank">Managers who manage them</a>, as well as internally through direct access to the owning managers. 
+      I also rebuilt <a href="https://github.com/facebookresearch/habitat-sim/pull/1556" target="_blank">vertex-based and added texture-based support of semantic segmentation</a>, 
+      implemented <a href="https://github.com/facebookresearch/habitat-sim/pull/929" target="_blank">Catmull-Rom-based trajectory tube mesh synthesis based on a point list</a>, and other various fun physics and graphics related tasks.</p>
+      <p>On the dataset authoring/management side, I was responsible for aggregating, editing and finalizing the 
+      <a href="https://huggingface.co/datasets/ai-habitat/ReplicaCAD_dataset" target="_blank">ReplicaCAD</a>,
+      <a href="https://huggingface.co/datasets/ai-habitat/ReplicaCAD_baked_lighting" target="_blank">ReplicaCAD Baked Lighting,</a>(which included building Python and Blender scripts to deconstruct the original authored scenes 
+      to their constituent assets, saving all the assets in appropriate formats, and subsequently rebuilding the scenes in Habitat Scene Dataset format), along with the     
+      <a href="https://aihabitat.org/datasets/hm3d/" target="_blank">HM3D</a> and <a href="https://aihabitat.org/datasets/hm3d-semantics/" target="_blank">HM3D-Semantics</a> datasets.</p>
+      
+      <p>My first contract at Meta ended at the end of March 2022, but Meta accelerated the usually required 1-year down time to get me back in February of 2023, which was very flattering.
+      <a href="https://github.com/facebookresearch/habitat-sim/pulls?page=1&q=is%3Apr+is%3Aclosed+author%3Ajturner65+is%3Amerged+closed%3A%3E2023-01-30" target="_blank">The 111+ approved and merged Pull Requests I authored for this second contract can be seen here</a>.
+      During this second contract I was very excited to be able to rewrite Habitat-Sim's material handling pipeline, along with the PBR (PRs <a href="https://github.com/facebookresearch/habitat-sim/pull/2113" target="_blank">1</a> 
+      <a href="https://github.com/facebookresearch/habitat-sim/pull/2112" target="_blank">2</a>   
+      <a href="https://github.com/facebookresearch/habitat-sim/pull/2119" target="_blank">3</a> 
+      <a href="https://github.com/facebookresearch/habitat-sim/pull/2091" target="_blank">Main</a>) and <a href="https://github.com/facebookresearch/habitat-sim/pull/2155/files" target="_blank">IBL</a> shaders 
+      it uses to render observations, all from scratch. I implemented all KHR material extensions support in the PBR shader other than those that are transparency-based, which would be somewhat difficult in Habitat 
+      since it manages assets in a scene graph. Another fun graphics implementation was adding <a href="https://github.com/facebookresearch/habitat-sim/pull/2192" target="_blank">HBAO+ support based on the NVidia reference implementation</a>. 
+      I also added semantic annotation region support <a href="https://github.com/facebookresearch/habitat-sim/pull/2299" target="_blank">1</a> <a href="https://github.com/facebookresearch/habitat-sim/pull/2307" target="_blank">2</a> (i.e. room level annotations).</p>           
+      <p>On a purely engineering front, I also <a href="https://github.com/facebookresearch/habitat-sim/pull/2511" target="_blank">reworked the system build mechanism to merge most of the various namespaces/libraries to a single library</a> to 
+      obviate long-standing circular linkage issues that had plagued Habitat-Sim since the beginning, <a href="https://github.com/facebookresearch/habitat-sim/pull/2301" target="_blank">removed the redundant Eigen math library dependency</a>, and reworked many of the
+      asset creation pathways to be more efficient and concise. I also greatly expanded the python-based accessibility and functionality tied to the C++ simulator's internals, which facilitated building 
+      <a href="https://github.com/facebookresearch/habitat-sim/pull/2379" target="_blank">multiple python-based editing tools and stand-alone applications</a> 
+      that enable the editing and construction of viable scenes using existing dataset assets in the Habitat-Sim engine itself. With regard to dataset work, one of the big projects for this contract was adding articulated furnishing support and assets to the HSSD 
+      dataset, and one of my projects on this front was going through all of the 200+ scenes to find those that fit the desired criteria (i.e. having the necessary annotated rooms) and making sure that the articulated assets in these rooms were properly oriented to work as expected. 
+      This often involved completely rebuilding a kitchen, for instance, if assets that fit (due to artist tricks such as scaling) when they were rigid bodies now did not fit after their conversion to articulated objects. Much of the tooling for scene editing
+      was originally built to facilitate this effort.</p>
+      
+      <h2>Other Recent Work</h2>
+      <p>In November of 2023 I did a most enjoyable contract for a small consulting firm named VisionWrights where I helped them implement a solution for proposing solar panel layouts for roofs based on satellite or images of the roof in question. They had a good design 
+      for a solution but it wasn't working how they thought it should, and brought me in to help them out. The day before I was to being, I read the paper that was the basis for their chosen solution, <a href="https://phillipi.github.io/pix2pix/" target="_blank">Pix2Pix</a>, and since for me
+      reading a paper is never sufficient to truly understand what is going on, I implemented the Pix2Pix network in PyTorch that day. Turns out their solution was reasonable, but they were improperly conditioning their input, and their model had a few other minor bugs that were ruining their results. 
+      Using the model I build we implemented an end-to-end solution that worked surprisingly well at inferring roof orientation and geometry so that reasonable proposals for panel placement, type and orientation could be made, with the panels procedurally placed on the roof. This was a real change 
+      from the mostly engineering work I'd been doing for the past few years at Meta AI, and it was great fun - a throwback to my various research projects at Tech, where I'd have to implement something from a paper rapidly and then build on it to work on some active research question.</p>
+      <p>From October 2013 to November 2016 I also worked full time as a Data Scientist at <a href="http://www.ignitionone.com/" target="_blank">IgnitionOne</a>, an independent online marketing company. </p>
      
       <h1>Back to School</h1>
       <p>I graduated from <a href="http://www.gatech.edu/" target="_blank">Georgia Tech</a> in 1992, and although my first degree was in Electrical Engineering, 

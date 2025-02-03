@@ -45,42 +45,54 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <div class="content"> 
     	<h1>CV/Resume</h1>
-	  	<a href="../cvdownloads/JohnTurnerResume.pdf">Download PDF</a>
+	  	<p><a href="../cvdownloads/JohnTurnerResume2025.pdf">Download PDF</a></p>
+	  	<!-- <p>PDF version being updated and will be available soon </p> -->
 		<h3>Education</h3>
 		<h5>Georgia Institute of Technology</h5>
-		<p>PhD program, College of Interactive Computing (2017-Nov 2019): Took leave of absence due to health and financial concerns</p>
-		<p>Masters of Computer Science (2014-Dec 2016) - GPA : 4.0.
-		<br>All CS(24) and Math(5) classes required for Bachelor of Computer Science specializing in Modeling and Simulation and Media (2010-2014) - GPA : 4.0.
+		<p>PhD program, College of Interactive Computing (2017-Nov 2019): LOA due to health and financial concerns. GPA : 3.8 before LOA.
+		<br>Masters of Computer Science (2014-Dec 2016) - GPA : 4.0.
+		<br>All CS(24) and Math(5) required for Bachelor of Computer Science specializing in Media(Graphics), Modeling and Simulation and AI (2010-2014) - GPA : 4.0.
 		<br>Bachelor of Electrical Engineering (1986-1992) </p>
 		
 		<h3>Academic Awards</h3>
 		<p>2014 Outstanding Graduate TA 
 		<br>2014 The Donald V. Jackson Fellowship  </p>
 		
-		<h3>Languages That I have worked extensively in</h3>
-		<p><span style="padding-left:2em">C, C++, C#, Java, Javascript, MATLAB, MEL script, Pascal, Python, R, SQL.</span> 
-		<br><span style="padding-left:2em">I have delivered software products professionally in C#, C++, Java, Javascript, Pascal, Python, MATLAB, R, SQL, and Visual Basic since 1992.</span>
-		<br><span style="padding-left:2em">I have TA'ed classes at Tech that required expertise in C, C++, Java, OpenGL, and Python.</span>  
-		<br><br>I have implemented numerous stable applications where cross-platform execution was required such as Java calling C++ via JNI, Java calling MATLAB via Java Matlab Interface, 
-		C++ simulation code calling and managing MATLAB to collect and format simulation data, Python web server calling and managing R environments and scripts which then 
-		interact with various SQL servers, and others.  <br>
-		<br>I've used various Machine Learning libraries in Matlab, Python, Java or C++, such as Weka (Java) to work with supervised learning tasks, 
-		SHARK (C++) to perform randomized optimization, (specifically unimodal CMA-ES), MatConvNet and Torch for Computer Vision/Deep Learning, particularly convolutional nets and LSTMs,
-		and SOMOCLU (C++) to build self organized maps.<br>
-		<br>I've implemented a full Kinect Library in C++ that included IK, voice recognition, hand state tracking (via my own implementation of a Neural Net w/Back Propagation) 
-		and a suite of Kinect-friendly UI constructs such as sliders, levers, buttons, textboxes and check boxes.</p>		
+		<h3>Professional Experience Summary</h3>
+		<p><span style="padding-left:2em">I have developed professionally in C++, Python, C#, Java, C, R, SQL, MATLAB, MEL script, Javascript, Pascal since 1992.</span> 
+		<br><span style="padding-left:2em">I TA'ed 9 undergraduate and graduate classes at Georgia Tech that required instructional ability in C, C++, Python, Java, and OpenGL.</span><br>  
+		<br><span style="padding-left:2em">I've delivered professional ML-based applications built around models I implemented based on academic papers and research, developed in PyTorch (i.e. Pix2Pix model),
+		SOMOCLU (SOM-based clustering and classification), TensorFlow (i.e. Cond-GAN) and various other language-specific NNet libraries in R, Python and Java; I have also used numerous Machine Learning libraries for research 
+		pursuits in C++, R, Matlab, Java and Python, SHARK (C++) to perform randomized optimization (specifically unimodal CMA-ES), 
+		MatConvNet for Computer Vision/Deep Learning (i.e. LSTM-based lip reader).</span><br>
+		<br><span style="padding-left:2em">I implemented numerous professional stable applications requiring cross-platform execution such as providing Python access to a C++ simulation 
+		environment via PyBind11, C++ simulation code calling and managing MATLAB to collect and format simulation data, Java calling C++ via JNI, Java calling MATLAB via Java Matlab Interface, 
+		Python web server calling and managing R environments and scripts which in turn manage various SQL servers, and others.</span><br>
+		<br><span style="padding-left:2em">I implemented a full Kinect Library in C++ in 2014 that included developing an IK solver, voice recognition, hand state tracking (via my own C++ implementation of 
+		a train-on-the-fly Neural Net w/Back Propagation) and a suite of Kinect-friendly UI constructs such as sliders, levers, buttons, textboxes and check boxes.</span></p>	
+			
 		<h3>Work and Research Experience</h3>
-		<h5>Facebook/Meta AI Research: 3/20 to 3/22. Contingent Worker/Research Engineer.</h5>
-		<p>Currently <a href="https://github.com/facebookresearch/habitat-sim/graphs/contributors">primary contributor to Habitat-Sim repository, in number of reviewed commits and secondary in code lines committed</a>. Interfaced with research scientists, 
-		students and platform users to design and implement critical features to enable projects to meet conference and journal submission deadlines. Implemented key 
-		C++ functionality in Habitat-Sim simulator to facilitate research challenges, greatly expand dataset support, and facilitate extensive user customization capabilities. 
+		<h5>Facebook/Meta AI Research: 2/23 to 2/25. Contingent Worker/Research Engineer 3.</h5>
+		<p>Currently <a href="https://github.com/facebookresearch/habitat-sim/graphs/contributors">primary contributor to Habitat-Sim repository, in number of reviewed commits and secondary in code lines committed</a>.
+		Approved and merged Pull Requests to Habitat-Sim repository during this contract (111+) can be seen <a href="https://github.com/facebookresearch/habitat-sim/pulls?q=is%3Apr+is%3Aclosed+author%3Ajturner65+is%3Amerged+closed%3A%3E2023-01-30+" target="_blank">here</a>. 
+		Rebuilt the asset material handling pipeline, along with a full rewrite of the PBR and IBL shaders, to be correct and KHR compliant, including shader support of most KHR material extensions, implemented HBAO+ 
+		based on NVidia Reference implementation, adding Semantic Region and Panoptic/Instanced-based Sensor support, extensive refactoring to simplify build process, remove redundant dependencies and improve efficiency, and 
+		Python and C++ tooling and applications for full scene editing and creation functionality.</p>
+		<h5>VisionWrights : 11/13-12/23. AI Consultant</h5>
+		<p>Implemented a Pix2Pix-based model from scratch in PyTorch on first day to infer the geometry and orientation as segmentation overlays of house roofs from satellite images in order to 
+		synthesize appropriate solar panel placement proposals. Rebuilt the system that consumed the segmentation output and synthesized the actual panel placements, and built an end-to-end system to provide the requested
+		proposals. Streamlined system to facilitate automation.</p>   		
+		<h5>Facebook/Meta AI Research: 3/20 to 3/22. Contingent Worker/Research Engineer 3.</h5>
+		Approved and merged Pull Requests to Habitat-Sim repository during this contract (250) can be seen <a href="https://github.com/facebookresearch/habitat-sim/pulls?q=is%3Apr+is%3Aclosed+author%3Ajturner65+is%3Amerged+closed%3A%3C2023-01-30+" target="_blank">here</a>. 
+		Interfaced with research scientists, student researchers and platform users to design and implement critical features to enable projects to meet conference and journal submission deadlines. Implemented key 
+		C++ simulator functionality to facilitate research challenges, greatly expand dataset support, and facilitate extensive user customization capabilities. 
 		Built a subsystem based on class-templates to facilitate the implementation for, management of and easy interaction with data of indeterminate type both in-engine and 
-		via python bindings, primarily used as asset metadata management. Built Python and Blender scripts to deconstruct mesh environments into constituent pieces and 
-		synthesize metadata to support rebuilding these scenes in engine.  Implemented tools to load and manipulate meshes, model Isometric camera view, synthesize meshes 
-		to visualize trajectories and other graphics-oriented functionality.</p>	
-		<h5>Georgia Tech : PhD Student Research Projects: 8/17 to 1/20</h5>
+		via Python bindings, primarily used as asset metadata management. Implemented Texture-based and Vertex-based Semantic support. Built Python and Blender scripts to 
+		deconstruct mesh environments into constituent pieces and synthesize metadata to support rebuilding these scenes in engine.  Implemented tools to load and manipulate 
+		meshes, model Isometric camera view, synthesize meshes to visualize trajectories and other graphics-oriented functionality.</p>	
+		<h5>Georgia Tech : PhD Student Research Projects: 8/17 to 12/19</h5>
 		<p>Advised by Dr. Karen Liu (8/17-1/19) Research focus on predicting optimal robotic control to assist an impaired biped in performing locomotion tasks, such as getting up, using RL and MPC paradigms.</p>
-		<p>Advised by Dr. Jarek Rossignac (8/17-1/18, 1/19-1/20) Researched using music to synthesize animation through signal analysis, deriving trig-based alternatives to Gaussians for ray tracing, and animating COTS patches to derive pleasing morphs.</p>
+		<p>Advised by Dr. Jarek Rossignac (8/17-1/18, 1/19-12/19) Researched using music to synthesize animation through signal analysis, deriving trig-based alternatives to Gaussians for ray tracing, and animating COTS patches to derive pleasing morphs.</p>
 		<h5>Georgia Tech : Head TA for Graduate Algorithms OMS: 8/17 to 1/20</h5>
 		<p>(This funded my PhD) Head TA for Intro to Graduate Algorithms (CS 6505/6515) class for the Online Master's Program. Classes consisted of 350-500 students. Along with sharing exam grading 
 		duty, was solely responsible for coding projects (Bloom Filter, PageRank, Knapsack and Kruskal's algorithm), including designing assignment parameters and code templates 

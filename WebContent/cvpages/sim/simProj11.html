@@ -78,8 +78,22 @@ Licence URI: http://www.os-templates.com/template-terms
 			I've also changed some of the default values so that the sim isn't so brittle, which enabled me 
 			to increase the timestep by a factor of 10.</p>
      <table class="project_table" >
-   		<tr><td><a href="../../cvexclips/sim/proj11/MPM_Snow_JCuda.mp4">MPM Snow Simulation via CUDA</a> </td></tr>
+   		<tr><td><a href="../../cvexclips/sim/proj11/MPM_Snow_JCuda.mp4">Old MPM Snow Simulation via CUDA</a> </td></tr>
       	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj11/MPM_Snow_JCuda.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
+	</table>
+		<p>I have recently refactored the system further to be more flexible for future implementations/expansions of the kernel, as well as to support other kernelized graphics algorithms and projects.
+		The video below shows the newest implementation. 6 randomly generated snowballs constructed of 200000 total material 
+		points evenly distributed, given an initial velocity of 30 targeting a location near the COM of the generated balls. The simulation replays displaying material points,
+		point velocities, grid velocities, grid accelerations and other framework/geometry. The colors of the particles reflect
+		their initial placements (X,Y,Z -> RGB). The video is in realtime - the system is able to take a variable number of simulation
+		steps between each rendering step that can be specified via the UI. The rendering is a bottleneck - all the material points and subsequent
+		vectors are copied to graphical constructs at render time, after they've been copied from the JCuda device area, effectively copying them twice. 
+		Ideally they'd be copied into a VBO-like construct that could be sent directly to a shader.  
+		</p>
+
+      <table class="project_table" >
+   		<tr><td><a href="../../cvexclips/sim/proj11/MPM_6SnowBalls200kParts.mp4">Current MPM Snow Simulation via CUDA</a> </td></tr>
+      	<tr><td><video width="800" height="450" autoplay loop><source src="../../cvexclips/sim/proj11/MPM_6SnowBalls200kParts.mp4" type="video/mp4">Your browser does not support the video tag.</video></td></tr>
  	</table>
 	
     </div>
